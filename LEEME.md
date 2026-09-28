@@ -7,6 +7,7 @@ sola cosa: hostear el reporte en una URL pública.
 robots.txt                    Disallow: / — que no lo indexen los buscadores
 od8adtochf39qt/index.html     el reporte de PREPARACIÓN (antes de jugar)
 3s7vsnpp94j69y/index.html     el RESUMEN del partido jugado
+jvp3apky68kutc/index.html     el AUTOSCOUTING de Munro (nuestra temporada)
 ```
 
 **Una ruta por tipo de reporte, y no se pisan.** El previo se sigue leyendo después
@@ -19,16 +20,17 @@ Solo funciona la ruta completa con el token.
 ## Las URLs
 
 ```
-preparación  https://lucasmayorca.github.io/pizarra-tactica/od8adtochf39qt/
-resumen      https://lucasmayorca.github.io/pizarra-tactica/3s7vsnpp94j69y/
+preparación   https://lucasmayorca.github.io/pizarra-tactica/od8adtochf39qt/
+resumen       https://lucasmayorca.github.io/pizarra-tactica/3s7vsnpp94j69y/
+autoscouting  https://lucasmayorca.github.io/pizarra-tactica/jvp3apky68kutc/
 ```
 
 Es **pública con el link, pero no listada**: cualquiera que lo tenga entra, y no
 aparece buscando en Google. No es seguridad — si alguien reenvía el link, entra.
 Para el plan de partido contra un rival, alcanza.
 
-**No cambies el nombre de los directorios `od8adtochf39qt` ni `3s7vsnpp94j69y`**
-o se rompen los links que ya compartiste.
+**No cambies el nombre de los directorios `od8adtochf39qt`, `3s7vsnpp94j69y` ni
+`jvp3apky68kutc`** o se rompen los links que ya compartiste.
 
 ## Alta, una sola vez
 
@@ -49,13 +51,23 @@ Desde `reportes/`:
 ./publicar.sh                            # preparación (por defecto Munro vs Banade)
 ./publicar.sh "Munro" "CEPA"             # preparación, otro rival
 ./publicar.sh --resumen "Munro" "CyP"    # el resumen del partido ya jugado
+./publicar.sh --autoscouting             # nuestra propia radiografía
 ```
 
 Regenera el reporte desde la base, lo copia a **su** ruta, commitea y pushea. Si no
 cambió nada, no hace commit. El YAML es opcional: sin él, el guion se deriva solo.
+
+**El autoscouting es la excepción: no se regenera.** Sube tal cual
+`reportes/salida/munro-autoscouting.html`, que está escrito a mano sobre el análisis
+de las 16 planillas. Si entran planillas nuevas, ese archivo **no se actualiza solo**
+— hay que rehacer el análisis y reescribirlo.
 
 ## Qué queda público
 
 El repo es público (Pages gratuito lo exige), así que **se ve el HTML del reporte**:
 los números del rival, los nombres de sus jugadores y el plan de partido. No se sube
 la base, ni las planillas, ni los YAML: solo el archivo generado.
+
+Con el autoscouting eso cambia de sujeto: ahí los nombres y los números flojos son
+**los nuestros** —quién mete de la línea, quién pierde la pelota, quién no debería
+tirar—. Sigue siendo pública con el link. Vale tenerlo presente antes de repartirlo.
