@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#14322B"><title>Munro vs CyP Azul · Resumen de partido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--board:#14322B;--deep:#0F2620;--chalk:#EDF2EE;--dim:#8FA99F;--rule:rgba(237,242,238,.17);--tiza:#E8C86A;--azul:#5FA8E0;--grid:rgba(237,242,238,.03);--pad:18px;--nav:60px;--hdr:44px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--board)}
+body{background-color:var(--board);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:17px 17px;background-attachment:fixed;color:var(--chalk);font:400 14.5px/1.52 'IBM Plex Sans',sans-serif;font-variant-numeric:tabular-nums;-webkit-text-size-adjust:100%}
+a{color:var(--tiza);text-decoration:none}a:hover{color:var(--chalk)}
+b,strong{font-weight:600;color:var(--chalk)}
+.hi{color:var(--tiza)}.md,.dim{color:var(--dim)}.lo{color:var(--azul)}
+/* type roles */
+.hero{font:800 54px/.88 Archivo,sans-serif;color:var(--tiza);white-space:nowrap;letter-spacing:-.01em}
+.hero.s{font-size:40px}
+.h1{font:800 27px/.98 Archivo,sans-serif;text-transform:uppercase;text-wrap:balance}
+.h1.long{font-size:20px;line-height:1.02}
+.h2{font:800 17px/1.1 Archivo,sans-serif;text-transform:uppercase;padding-bottom:10px;border-bottom:1.5px solid var(--rule)}
+.sub{font:700 11.5px/1.3 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.07em;color:var(--tiza)}
+.eb{font:600 8.5px/1.3 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--dim)}
+.pn{font:800 17px/1.1 Archivo,sans-serif}
+.p2{font-size:13px;line-height:1.45;color:var(--dim)}
+.n{font:500 13px/1.3 'IBM Plex Mono',monospace;white-space:nowrap}
+.ev{font:400 10.5px/1.4 'IBM Plex Mono',monospace;color:var(--dim)}
+p{text-wrap:pretty}
+p+p{margin-top:12px}
+/* layout */
+.blk{margin-top:44px}
+.blk>.h2+*{margin-top:4px}
+.it{border-top:1px solid var(--rule);padding:14px 0}
+.h2+.it,.h2+div>:first-child,.h2+.c4,.h2+.c5,.h2+.c8{border-top:0}
+.gap8{margin-top:8px}.gap12{margin-top:12px}.gap16{margin-top:16px}.gap24{margin-top:24px}
+/* nota / advertencia */
+.note{background:var(--deep);padding:14px 16px;font-size:13px;line-height:1.5;color:var(--dim)}
+.warn{background:var(--deep);padding:14px 16px;font-size:13px;line-height:1.5;color:var(--tiza);display:grid;grid-template-columns:18px minmax(0,1fr)}
+/* C2 cabecera */
+.hdr{position:sticky;top:0;z-index:5;height:var(--hdr);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 var(--pad);background:var(--board);border-bottom:1px solid var(--rule)}
+.hdr .l{font:800 12px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.04em}
+/* C1 navegación */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--deep);border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom)}
+.nav .w{max-width:480px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);height:var(--nav)}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:var(--dim);font:600 10px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.06em;position:relative;-webkit-tap-highlight-color:transparent;cursor:pointer}
+.tab::before{content:"";position:absolute;top:-1px;left:22%;right:22%;height:2px;background:transparent}
+.tab.on{color:var(--tiza)}.tab.on::before{background:var(--tiza)}
+.tab:active,.tab.press{color:var(--chalk);background:var(--board)}
+.tab:hover{color:var(--chalk)}.tab.on:hover{color:var(--tiza)}
+.sh{width:12px;height:12px;border:1.5px solid currentColor}
+.sh.c{border-radius:50%}.sh.d{transform:rotate(45deg) scale(.86)}
+.sh.t{width:0;height:0;border:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid currentColor;opacity:.5}
+.tab.on .sh{background:currentColor}.tab.on .sh.t{opacity:1;background:none}
+/* C3 cifra héroe */
+.c3 .eb{margin-top:10px}
+.c3 p{margin-top:10px}
+/* C4 tarjeta de eje */
+.c4{border-top:1px solid var(--rule);padding:14px 0}
+.c4 .top{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:start}
+.c4 .nm{font:600 14.5px/1.25 Archivo,sans-serif}
+.c4 .df{font-size:13px;line-height:1.35;color:var(--dim);margin-top:2px}
+.c4 .v{font:800 20px/1 Archivo,sans-serif;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.c4 .v .mk{font-size:11px;width:1.1em;text-align:center}
+.c4 .lec{margin-top:8px}
+.c4.chica .v{color:var(--dim)!important}
+/* C5 lista */
+.c5{display:grid;grid-template-columns:22px minmax(0,1fr);border-top:1px solid var(--rule);padding:14px 0}
+.c5 .mk{font-size:12px;line-height:22px}
+.c5 .ev{margin-top:6px}
+/* C6 ficha */
+.c6{border-top:1px solid var(--rule);padding:22px 0 26px}
+.c6 .id{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:baseline}
+.c6 .ix{font:800 17px/1 Archivo,sans-serif;color:var(--dim)}
+.c6 .sub{margin-top:5px}
+.c6 .st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:8px;margin-top:16px;align-items:end}
+.c6 .st>div{display:flex;flex-direction:column;gap:5px}
+.c6 .st .n{font-size:15px}
+.c6 .st .ft{font:800 27px/.95 Archivo,sans-serif;color:var(--tiza)}
+.c6 .desc{margin-top:14px}
+.c6 .qe{margin-top:14px;border-left:2px solid var(--tiza);padding:2px 0 2px 12px}
+.c6 .qe .eb{margin-bottom:4px}
+.c6.aten .pn{color:var(--dim)}
+.c6.aten .sub{color:var(--dim)}
+.c6.aten .st .ft{color:var(--dim);font-size:20px}
+.c6.aten .desc,.c6.aten .qe p{color:var(--dim)}
+.c6.aten .desc b,.c6.aten .qe b{color:var(--dim)}
+.c6.aten .qe{border-left-color:var(--rule)}
+/* C7 plan */
+.c7{border-left:2px solid var(--tiza);padding:2px 0 2px 14px;margin-top:22px}
+.c7.def{border-left-color:var(--azul)}
+.c7 .tg{font:700 11.5px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.07em;color:var(--tiza);display:flex;gap:8px;align-items:baseline}
+.c7.def .tg{color:var(--azul)}
+.c7 .tg .k{font:500 11.5px/1 'IBM Plex Mono',monospace}
+.c7 .tt{font:800 17px/1.15 Archivo,sans-serif;margin-top:8px;text-wrap:balance}
+.c7.def .tt{text-transform:uppercase;font-size:15px;letter-spacing:.02em}
+.c7 p{margin-top:8px}
+.c7 .ev{margin-top:8px}
+/* C8 clave */
+.c8{display:grid;grid-template-columns:52px minmax(0,1fr);border-top:1px solid var(--rule);padding:16px 0}
+.c8 .nb{font:800 54px/.82 Archivo,sans-serif;color:var(--rule)}
+.c8 .tt{font:800 17px/1.1 Archivo,sans-serif;text-transform:uppercase;text-wrap:balance}
+.c8 p{margin-top:6px}
+.c8 .ev{margin-top:8px}
+/* C9 tabla */
+.c9{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 calc(var(--pad)*-1);padding:0 var(--pad)}
+.c9 table{border-collapse:collapse;width:100%;min-width:max-content}
+.c9 th{font:600 8.5px/1.3 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--dim);text-align:right;padding:10px 0 8px 12px;white-space:nowrap}
+.c9 th:first-child,.c9 td:first-child{text-align:left;padding-left:0}
+.c9 td{border-top:1px solid var(--rule);padding:11px 0 11px 12px;text-align:right;font:500 13px/1.3 'IBM Plex Mono',monospace;white-space:nowrap}
+.c9 td:first-child{font:600 13px/1.3 Archivo,sans-serif}
+.c9 td.w{white-space:normal;text-align:left;font:400 13px/1.4 'IBM Plex Sans',sans-serif}
+.c9 tr.fade td{color:var(--dim)}
+.c9 .bd{font-weight:600}
+/* prosa */
+.prose p{margin-top:0}
+.prose p+p{margin-top:18px}
+.prose p .n{font-size:13.5px;color:var(--chalk)}
+.prose .lead{font-weight:500;color:var(--chalk)}
+.prose .coda{color:var(--dim);border-top:1px solid var(--rule);padding-top:16px}
+/* ritmo */
+.duo{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:12px;align-items:end;padding:18px 0 4px}
+.duo .hero{font-size:40px}
+.duo .vs{font:600 8.5px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--dim);padding-bottom:28px}
+.duo .eb{margin-top:8px}
+
+.app{max-width:480px;margin:0 auto;min-height:100vh}.view{display:none;padding:14px var(--pad) calc(var(--nav) + 56px + env(safe-area-inset-bottom))}.view.on{display:block}
+
+/* --- agregados sobre la entrega de diseno. Los siete tokens no se tocan:
+   rule2 y rule3 son el mismo chalk a otra opacidad, para los ejes de los
+   graficos y para la linea del cero. --- */
+:root{--rule2:rgba(237,242,238,.28);--rule3:rgba(237,242,238,.45)}
+button{font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;line-height:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.eb{font-size:9.5px}
+
+/* barra de secciones */
+.chips{position:sticky;top:var(--hdr);z-index:4;margin:0 calc(var(--pad) * -1);padding:9px var(--pad);background:var(--board);border-bottom:1px solid var(--rule);display:flex;gap:7px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:600 10px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);border:1px solid var(--rule2);border-radius:999px;padding:7px 11px;white-space:nowrap}
+.chip[aria-current]{color:var(--board);background:var(--tiza);border-color:var(--tiza)}
+.chip.todo{margin-left:auto;border-style:dashed}
+
+/* secciones desplegables */
+.h2{display:flex;width:100%;align-items:baseline;gap:9px;justify-content:space-between}
+.h2 .pm{font:400 19px/1 'IBM Plex Mono',monospace;color:var(--dim);flex:none}
+.sum{font:400 12.5px/1.5 Archivo,sans-serif;color:var(--dim);margin-top:9px}
+.blk[data-sec]{scroll-margin-top:100px}
+
+/* glosario */
+.g{border-bottom:1px dotted var(--dim);color:inherit}
+#glo{position:fixed;left:0;right:0;bottom:calc(var(--nav) + env(safe-area-inset-bottom));z-index:20;background:var(--deep);border-top:2px solid var(--tiza);padding:16px var(--pad) 18px}
+#glo .w{max-width:480px;margin:0 auto}
+#glo h3{font:800 14px/1.2 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:var(--tiza)}
+#glo p{font:400 13.5px/1.55 Archivo,sans-serif;margin-top:7px}
+#glo .x{float:right;font:600 11px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--dim)}
+
+/* diagramas de cancha */
+.esq{display:flex;flex-direction:row-reverse;flex-wrap:wrap;gap:12px;align-items:flex-start;margin-top:10px}
+.esq .t{flex:1 1 150px;min-width:0}
+.cch{flex:0 0 124px;width:124px}
+.cch button{display:block;width:100%}
+.cch svg{display:block;width:100%;height:auto;aspect-ratio:160/150}
+.cch.big{flex-basis:100%;width:100%;order:-1}
+.zm{font:600 9.5px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);margin-top:5px;display:block}
+
+/* codigos de bloque: en mono el O1 se lee 01 */
+.k{font-family:Archivo,sans-serif!important;font-weight:800!important;letter-spacing:.02em!important}
+
+/* Aire. La tarjeta de eje ahora lleva una tira adentro; con el padding de la
+   entrega, cinco seguidas quedaban pegadas una encima de otra. */
+.c4{padding:20px 0}
+.c4 .lec{margin-top:10px}
+.blk[data-sec] > div > .c7:first-child{margin-top:16px}
+
+/* fichas contraidas */
+.pk{display:flex;width:100%;justify-content:space-between;align-items:baseline;gap:10px;font:500 12px/1 'IBM Plex Mono',monospace;color:var(--dim);margin-top:8px}
+</style>
+</head><body>
+
+
+
+
+<div class="app">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" style="fill:#E8C86A"></path></marker></defs></svg>
+<header class="hdr"><span class="l">Munro vs CyP Azul</span><span class="eb">FLEX Superior · CABB</span></header>
+
+<section class="view" id="resumen" data-screen-label="Resumen">
+<nav class="chips" aria-label="Secciones de esta vista"><a class="chip" href="#s-resultado" data-chip="resultado">El resultado</a><a class="chip" href="#s-decidio" data-chip="decidio">Dónde se decidió</a><a class="chip" href="#s-claves" data-chip="claves">Las claves</a><button class="chip todo" data-todo>Contraer todo</button></nav>
+<div class="eb" style="margin-top:22px">resumen de partido · 91 planillas</div>
+<h1 class="h1 gap12">Unión Vecinal de Munro</h1><div class="eb gap8">contra</div><div class="h1 gap8">Caza y Pesca Azul A</div>
+<div class="c3 blk it gap24" style="padding-top:20px"><div class="hero">63 – 61</div><div class="eb gap8">ganamos de visitante · suplementario (45′)</div></div>
+<div class="note gap16">Esto no es el partido: es lo que la planilla deja ver del partido. Lo esperado sale de la temporada <b>sin este partido adentro</b>, para que un resultado raro no se meta en su propia vara.</div>
+
+<div class="blk" id="s-resultado" data-sec="resultado">
+<h2 class="h2"><button data-toggle="resultado" aria-expanded="true" aria-controls="b-resultado"><span>El resultado</span></button><span class="pm" aria-hidden="true">−</span></h2>
+
+<div id="b-resultado">
+<p class="gap12">Ganamos 63 – 61 de visitante, en suplementario. Y lo ganamos en la peor noche de tiro de la temporada: 31.3% de efectividad, contra el 42.1% que veníamos haciendo. El tres fue el de siempre —11 de 39, 28.2%—; el que desapareció fue el dos: 7 de 36, 19.4%, lo más bajo del año. Alcanzó por el otro lado: los aguantamos en 37.0% cuando vienen de 46.2%, fuimos 25 veces a la línea y perdimos apenas 11 pelotas.</p>
+<div class="c5 gap16"><span class="mk lo">▼</span><div><b>Nuestro ataque</b> 74.1 por 100 posesiones — esperábamos 79.0.<div class="ev">FLEX 81.0 · nuestra temporada 85.7</div></div></div>
+<div class="c5"><span class="mk hi">▲</span><div><b>Nuestra marca</b> los dejó en 69.5 — esperábamos 86.1.<div class="ev">FLEX 81.0 · su temporada 87.5</div></div></div>
+<div class="c5"><span class="mk dim">·</span><div><b>El ritmo</b> fue 76.8 posesiones a 40′ — esperábamos 77.8. Se jugó al ritmo previsto.</div></div>
+</div>
+</div>
+
+<div class="blk" id="s-decidio" data-sec="decidio">
+<h2 class="h2"><button data-toggle="decidio" aria-expanded="false" aria-controls="b-decidio"><span>Dónde se decidió</span></button><span class="pm" aria-hidden="true">+</span></h2>
+<div class="sum">Efectividad de tiro en defensa · Efectividad de tiro en ataque · Tiros libres en ataque</div>
+<div id="b-decidio" hidden>
+<p class="gap12 p2">Las magnitudes que más se salieron de lo esperado, de los dos lados del partido. Ordenadas por desvío, no por gusto.</p>
+<div class="gap16">
+<div class="c5"><span class="mk hi">▲</span><div><div class="tt" style="font:800 15px/1.2 Archivo,sans-serif">Efectividad de tiro · en defensa <a href="#rival" data-ir="d-efg" class="k" style="color:var(--tiza);text-decoration:none">ver →</a></div><p>Les costó todo el partido: los aguantamos bien abajo de lo suyo. Ellos: 15 de 39 de dos (38.5%) y 7 de 30 de tres (23.3%). Por intento: el dos rindió 0.77 y el tres 0.70.</p><div class="ev">45.3% esperado → 37.0% real · −2.1 desvíos</div></div></div>
+<div class="c5"><span class="mk lo">▼</span><div><div class="tt" style="font:800 15px/1.2 Archivo,sans-serif">Efectividad de tiro · en ataque <a href="#estrategia" data-ir="m-efg" class="k" style="color:var(--tiza);text-decoration:none">ver →</a></div><p>No entró. Es la magnitud que más se salió, y para el lado malo. 7 de 36 de dos (19.4%) y 11 de 39 de tres (28.2%). Por intento: el dos rindió 0.39 y el tres 0.85.</p><div class="ev">39.5% esperado → 31.3% real · −2.1 desvíos</div></div></div>
+<div class="c5"><span class="mk hi">▲</span><div><div class="tt" style="font:800 15px/1.2 Archivo,sans-serif">Tiros libres · en ataque <a href="#estrategia" data-ir="m-ftr" class="k" style="color:var(--tiza);text-decoration:none">ver →</a></div><p>Llegamos a la línea más de lo que ellos suelen permitir. 16 de 25 desde la línea (64.0%).</p><div class="ev">0.126 esperado → 0.213 real · +1.7 desvíos</div></div></div>
+</div>
+</div>
+</div>
+
+<div class="blk" id="s-claves" data-sec="claves">
+<h2 class="h2"><button data-toggle="claves" aria-expanded="false" aria-controls="b-claves"><span>Lo que queda</span></button><span class="pm" aria-hidden="true">+</span></h2>
+<div class="sum">Qué sostener, qué corregir y cuánto pesa un partido.</div>
+<div id="b-claves" hidden>
+<div class="gap12"><div class="c8"><span class="nb">1</span><div><div class="tt">Lo que hay que sostener</div><p>Efectividad de tiro en defensa: 37.0% contra 45.3% esperado. Es la magnitud que más se salió a nuestro favor.</p></div></div>
+<div class="c8"><span class="nb">2</span><div><div class="tt">Lo que hay que corregir</div><p>Efectividad de tiro en ataque: 31.3% contra 39.5% esperado. El volumen de tres estuvo bien elegido —rindió 0.85 por intento contra 0.39 del dos—; lo que falló fue el dos: 7 de 36.</p></div></div>
+<div class="c8"><span class="nb">3</span><div><div class="tt">Y es un partido</div><p>Todo lo de arriba sale de una planilla. Un partido alcanza para ver qué pasó, no para cambiar lo que sabemos del equipo: la temporada sigue siendo la vara y este resultado ya entró en ella.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="view" id="rival" data-screen-label="El rival">
+<nav class="chips" aria-label="Secciones de esta vista"><a class="chip" href="#s-atacaron" data-chip="atacaron">Cómo atacaron</a><a class="chip" href="#s-quienes" data-chip="quienes">Quiénes estuvieron</a><a class="chip" href="#s-origen" data-chip="origen">De dónde salieron los puntos</a><button class="chip todo" data-todo>Contraer todo</button></nav>
+<div class="eb" style="margin-top:22px">su ataque contra nuestra marca</div><h1 class="h1 gap8">Caza y Pesca Azul A</h1>
+
+<div class="blk" id="s-atacaron" data-sec="atacaron">
+<h2 class="h2"><button data-toggle="atacaron" aria-expanded="true" aria-controls="b-atacaron"><span>Cómo atacaron</span></button><span class="pm" aria-hidden="true">−</span></h2>
+<div class="sum" hidden>Los dejamos en 37.0% de efectividad —esperábamos 45.3%— y les forzamos 18 pérdidas.</div>
+<div id="b-atacaron">
+<p class="gap12 p2">Las cinco magnitudes de su ataque. La tira compara lo que suelen hacer, lo que esperábamos contra nuestra marca y lo que hicieron.</p>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F"><span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;background:#EDF2EE"></span>el partido</span><span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #EDF2EE;box-sizing:border-box"></span>habitual</span><span style="display:flex;align-items:center;gap:6px"><span style="width:2px;height:12px;background:#8FA99F"></span>esperado</span></div>
+<div class="c4" id="d-efg"><div class="top"><div><div class="nm">Efectividad de tiro</div><div class="df">su ataque</div></div><div class="v hi"><span class="mk">▲</span>37.0%</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:68.26%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:72.73%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:27.27%;width:10px;height:10px;margin-left:-5px;background:#E8C86A"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#E8C86A">37.0%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div><div style="position:absolute;top:27px;left:68.26%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">45.3%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div><div style="position:absolute;top:27px;left:88.51%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">46.2%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div></div><div class="ev gap8">−2.1 desvíos respecto de lo esperado</div><p class="lec">Les costó todo el partido: los aguantamos bien abajo de lo suyo. Ellos: 15 de 39 de dos (38.5%) y 7 de 30 de tres (23.3%). Por intento: el dos rindió 0.77 y el tres 0.70.</p></div>
+<div class="c4" id="d-ftr"><div class="top"><div><div class="nm">Tiros libres</div><div class="df">su ataque</div></div><div class="v hi"><span class="mk">▲</span>0.145</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:72.73%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:47.76%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:27.27%;width:10px;height:10px;margin-left:-5px;background:#E8C86A"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#E8C86A">0.145</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div><div style="position:absolute;top:27px;left:49.36%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">0.180</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div><div style="position:absolute;top:27px;left:72.73%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">0.222</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div></div><div class="ev gap8">−1.5 desvíos respecto de lo esperado</div><p class="lec">Los marcamos con los pies: casi no fueron a la línea. Ellos: 10 de 20 desde la línea (50.0%).</p><div class="c5" style="border-top:0;padding:10px 0 0"><span class="mk hi">▲</span><div><b class="hi">D1 · Marcar con los pies, no con las manos</b> Era un punto del plan. Cayó a favor.</div></div></div>
+<div class="c4" id="d-rate3"><div class="top"><div><div class="nm">Dieta de triples</div><div class="df">su ataque</div></div><div class="v md"><span class="mk">─</span>43.5%</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:55.41%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:27.27%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:72.73%;width:10px;height:10px;margin-left:-5px;background:#EDF2EE"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">37.2%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div><div style="position:absolute;top:27px;left:55.41%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">41.1%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div><div style="position:absolute;top:27px;left:77.50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">43.5%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div></div><div class="ev gap8">+0.5 desvíos respecto de lo esperado</div><p class="lec">Tiraron de afuera más de lo habitual. Ellos: 30 de los 69 tiros fueron de tres.</p></div>
+<div class="c4" id="d-tov"><div class="top"><div><div class="nm">Pérdidas</div><div class="df">su ataque</div></div><div class="v hi"><span class="mk">▲</span>20.5%</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:27.27%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:33.07%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:72.73%;width:10px;height:10px;margin-left:-5px;background:#E8C86A"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">18.6%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div><div style="position:absolute;top:27px;left:47.53%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">18.9%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div><div style="position:absolute;top:27px;left:72.73%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#E8C86A">20.5%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div></div><div class="ev gap8">+0.5 desvíos respecto de lo esperado</div><p class="lec">Los hicimos perderla más de lo que la pierden. Ellos: 18 pérdidas en el partido.</p><div class="c5" style="border-top:0;padding:10px 0 0"><span class="mk hi">▲</span><div><b class="hi">D2 · No van a regalar nada</b> Era un punto del plan. Cayó a favor.</div></div></div>
+<div class="c4" id="d-rof"><div class="top"><div><div class="nm">Rebote de ataque</div><div class="df">su ataque</div></div><div class="v md"><span class="mk">─</span>18.2%</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:27.27%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:72.73%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:31.80%;width:10px;height:10px;margin-left:-5px;background:#EDF2EE"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">17.9%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div><div style="position:absolute;top:27px;left:49.36%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">18.2%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div><div style="position:absolute;top:27px;left:72.73%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">21.1%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div></div><div class="ev gap8">+0.1 desvíos respecto de lo esperado</div><p class="lec">Terminó donde se esperaba: no fue por acá. Ellos: 8 rebotes de ataque.</p></div>
+
+</div>
+</div>
+
+<div class="blk" id="s-quienes" data-sec="quienes">
+<h2 class="h2"><button data-toggle="quienes" aria-expanded="false" aria-controls="b-quienes"><span>Quiénes estuvieron</span></button><span class="pm" aria-hidden="true">+</span></h2>
+<div class="sum">4 de su rotación no figuran en la planilla.</div>
+<div id="b-quienes" hidden>
+<p class="gap12 p2">La planilla distingue dos cosas: el que no figura y el que figura con cero. No son lo mismo.</p>
+<div class="sub gap16">No figuran en la planilla</div>
+<div class="c5"><span class="mk lo">▼</span><div><b>Sanchez, Julian Octavio</b> — venía de 27.8′ y 9.8 puntos en 12 partidos.</div></div>
+<div class="c5"><span class="mk lo">▼</span><div><b>Karaman, Federico</b> — venía de 26.8′ y 14.0 puntos en 10 partidos.</div></div>
+<div class="c5"><span class="mk lo">▼</span><div><b>Olmedo, Franco Gaston</b> — venía de 23.2′ y 8.8 puntos en 12 partidos.</div></div>
+<div class="c5"><span class="mk lo">▼</span><div><b>Filliol, Alberto Eugenio</b> — venía de 16.8′ y 8.0 puntos en 3 partidos.</div></div>
+
+
+<div class="warn gap16"><span>⚠</span><span>Karaman, Federico no estuvo, y es el patrón más marcado de su temporada: con él en cancha están 10–0; sin él, 1–3. Era el hallazgo del reporte previo y se volvió a cumplir.</span></div>
+<div class="note gap16">La planilla dice quién no estuvo. <b>No dice por qué</b> —lesión, sanción, viaje o decisión técnica se ven igual desde acá— y el reporte no lo va a inventar.</div>
+</div>
+</div>
+
+<div class="blk" id="s-origen" data-sec="origen">
+<h2 class="h2"><button data-toggle="origen" aria-expanded="false" aria-controls="b-origen"><span>De dónde salieron los puntos</span></button><span class="pm" aria-hidden="true">+</span></h2>
+<div class="sum">52% de nuestros puntos de arriba · 39 triples de 75 tiros.</div>
+<div id="b-origen" hidden>
+<p class="gap12 p2">El reparto de puntos entre dos, tres y línea. El partido contra la temporada, de los dos.</p>
+<div style="display:flex;flex-direction:column;gap:9px;margin-top:12px"><div><div style="display:flex;justify-content:space-between;font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F;margin-bottom:4px"><span>Munro · el partido</span><span style="font-family:'IBM Plex Mono',monospace;letter-spacing:0">22/52/25</span></div><div style="display:flex;height:12px;gap:2px"><div style="width:22.22%;background:#EDF2EE" title="de 2 22%"></div><div style="width:52.38%;background:#8FA99F" title="de 3 52%"></div><div style="width:25.40%;background:transparent;border:1px solid #EDF2EE;box-sizing:border-box" title="libres 25%"></div></div></div><div><div style="display:flex;justify-content:space-between;font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F;margin-bottom:4px"><span>Munro · la temporada</span><span style="font-family:'IBM Plex Mono',monospace;letter-spacing:0">50/35/15</span></div><div style="display:flex;height:12px;gap:2px"><div style="width:49.55%;background:#EDF2EE" title="de 2 50%"></div><div style="width:35.05%;background:#8FA99F" title="de 3 35%"></div><div style="width:15.41%;background:transparent;border:1px solid #EDF2EE;box-sizing:border-box" title="libres 15%"></div></div></div><div><div style="display:flex;justify-content:space-between;font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F;margin-bottom:4px"><span>CyP Azul · el partido</span><span style="font-family:'IBM Plex Mono',monospace;letter-spacing:0">49/34/16</span></div><div style="display:flex;height:12px;gap:2px"><div style="width:49.18%;background:#EDF2EE" title="de 2 49%"></div><div style="width:34.43%;background:#8FA99F" title="de 3 34%"></div><div style="width:16.39%;background:transparent;border:1px solid #EDF2EE;box-sizing:border-box" title="libres 16%"></div></div></div><div><div style="display:flex;justify-content:space-between;font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F;margin-bottom:4px"><span>CyP Azul · la temporada</span><span style="font-family:'IBM Plex Mono',monospace;letter-spacing:0">53/31/16</span></div><div style="display:flex;height:12px;gap:2px"><div style="width:53.03%;background:#EDF2EE" title="de 2 53%"></div><div style="width:30.67%;background:#8FA99F" title="de 3 31%"></div><div style="width:16.29%;background:transparent;border:1px solid #EDF2EE;box-sizing:border-box" title="libres 16%"></div></div></div><div style="display:flex;gap:14px;margin-top:2px;font:600 9px/1 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F"><span style="display:flex;align-items:center;gap:5px"><i style="width:10px;height:10px;background:#EDF2EE;display:block"></i>de 2</span><span style="display:flex;align-items:center;gap:5px"><i style="width:10px;height:10px;background:#8FA99F;display:block"></i>de 3</span><span style="display:flex;align-items:center;gap:5px"><i style="width:10px;height:10px;border:1px solid #EDF2EE;display:block"></i>libres</span></div></div>
+<div class="eb" style="margin-top:14px">porcentaje de los puntos del equipo</div>
+<p class="gap16">El 52% de nuestros puntos salió de arriba, contra el 35% de la temporada. 39 de nuestros 75 tiros fueron de tres: la proporción más alta del año. Ellos empujan a tirar de afuera y nos empujaron. Visto por intento, el tres rindió 0.85 y el dos 0.39: la dieta que nos impusieron terminó siendo la que más rendía, y no porque el triple entrara —entró al 28.2%— sino porque el dos no entró.</p>
+</div>
+</div>
+</section>
+
+<section class="view" id="jugadores" data-screen-label="Jugadores">
+<nav class="chips" aria-label="Secciones de esta vista"><a class="chip" href="#s-rotacion" data-chip="rotacion">La rotación</a><a class="chip" href="#s-nuestros" data-chip="nuestros">Nosotros</a><a class="chip" href="#s-ellos" data-chip="ellos">Ellos</a><button class="chip todo" data-todo>Contraer todo</button></nav>
+<h1 class="h1" style="margin-top:22px">Los jugadores</h1>
+<p class="gap12">Lo que hizo cada uno, contra lo que suele hacer. La norma sale de la temporada sin este partido.</p>
+
+<div class="blk" id="s-rotacion" data-sec="rotacion">
+<h2 class="h2"><button data-toggle="rotacion" aria-expanded="true" aria-controls="b-rotacion"><span>La rotación del partido</span></button><span class="pm" aria-hidden="true">−</span></h2>
+<div class="sum" hidden>Usamos 10 jugadores · Chaves, Juan Pablo fue el que más anotó, con 13 puntos.</div>
+<div id="b-rotacion">
+<p class="gap12 p2">Minutos y puntos de este partido. Los apagados jugaron menos de 20′.</p>
+<div style="display:flex;flex-direction:column;margin-top:10px"><a href="#j1" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#EDF2EE">Mendizabal, Sebastian</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">6 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:75.6%;background:#EDF2EE;opacity:1"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">34.0′</span></div></a><a href="#j2" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#EDF2EE">Galinetti, G.</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">8 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:72.6%;background:#EDF2EE;opacity:1"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">32.6′</span></div></a><a href="#j3" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#EDF2EE">Masi, Rodrigo Leonardo</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">5 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:65.6%;background:#EDF2EE;opacity:1"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">29.5′</span></div></a><a href="#j4" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#EDF2EE">Zajac, Jose Antonio</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">9 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:63.7%;background:#EDF2EE;opacity:1"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">28.7′</span></div></a><a href="#j5" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#EDF2EE">Chaves, Juan Pablo</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">13 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:59.4%;background:#EDF2EE;opacity:1"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">26.7′</span></div></a><a href="#j6" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#EDF2EE">Mayorca, Lucas Emanuel</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">10 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:48.3%;background:#EDF2EE;opacity:1"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">21.7′</span></div></a><a href="#j7" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#EDF2EE">D'Alesio, Alejo</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">7 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:46.0%;background:#EDF2EE;opacity:1"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">20.7′</span></div></a><a href="#j8" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#8FA99F">Garcia, Pablo German</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">3 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:31.9%;background:#8FA99F;opacity:.55"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">14.3′</span></div></a><a href="#j9" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#8FA99F">Vasquez, Fernando</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">2 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:26.3%;background:#8FA99F;opacity:.55"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">11.8′</span></div></a><a href="#j10" data-chip style="display:block;border-top:1px solid rgba(237,242,238,.17);padding:8px 0;text-decoration:none;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px"><span style="font:600 12.5px/1.2 Archivo,sans-serif;color:#8FA99F">Fridman Mendez, A.</span><span style="font:500 11px/1 'IBM Plex Mono',monospace;color:#8FA99F;white-space:nowrap">0 pts</span></div><div style="position:relative;height:15px"><div style="position:absolute;left:0;top:0;height:15px;width:10.4%;background:#8FA99F;opacity:.55"></div><span style="position:absolute;left:6px;top:0;font:600 10px/15px Archivo,sans-serif;color:#14322B">4.7′</span></div></a><div style="font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F;text-align:center;margin-top:8px">minutos por partido · escala 0 a 45</div></div>
+</div>
+</div>
+
+<div class="blk" id="s-nuestros" data-sec="nuestros">
+<h2 class="h2"><button data-toggle="nuestros" aria-expanded="false" aria-controls="b-nuestros"><span>Nosotros</span></button><span class="pm" aria-hidden="true">+</span></h2>
+<div class="sum">10 fichas, cada una contra su temporada.</div>
+<div id="b-nuestros" hidden>
+<div class="warn gap12"><span>⚠</span><span><b>Di Cosmo, Ramiro</b> vistió y no entró (venía de 29.8′); <b>Perez Williams, Manuel</b> vistió y no entró (venía de 22.3′).</span></div>
+<article class="c6" id="j1" data-sec="j1"><div class="id"><span class="ix">1</span><div><div class="pn">Mendizabal, Sebastian</div><div class="sub">El que más jugó</div></div></div><div id="b-j1"><div class="st"><div><span class="ft">6</span><span class="eb">puntos</span></div><div><span class="n">34′</span><span class="eb">minutos</span></div><div><span class="n">6</span><span class="eb">rebotes</span></div><div><span class="n">+8</span><span class="eb">+/−</span></div></div><p class="desc">0/7 de dos, 2/6 de tres. 4 asistencias, 1 robo, 4 pérdidas</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 5.0 puntos en 21.8′ (11 partidos), más cancha de la habitual (+12′).</p></div></div></article>
+<article class="c6" id="j2" data-sec="j2"><div class="id"><span class="ix">2</span><div><div class="pn">Galinetti, G.</div><div class="sub">El que más bajó</div></div></div><div id="b-j2"><div class="st"><div><span class="ft">8</span><span class="eb">puntos</span></div><div><span class="n">33′</span><span class="eb">minutos</span></div><div><span class="n">13</span><span class="eb">rebotes</span></div><div><span class="n">+2</span><span class="eb">+/−</span></div></div><p class="desc">2/8 de dos, 0/2 de tres, 4/5 de libres. 2 asistencias, 3 pérdidas</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 9.3 puntos en 24.0′ (11 partidos), más cancha de la habitual (+9′).</p></div></div></article>
+<article class="c6" id="j3" data-sec="j3"><div class="id"><span class="ix">3</span><div><div class="pn">Masi, Rodrigo Leonardo</div><div class="sub">30′ en cancha</div></div></div><div id="b-j3"><div class="st"><div><span class="ft">5</span><span class="eb">puntos</span></div><div><span class="n">30′</span><span class="eb">minutos</span></div><div><span class="n">5</span><span class="eb">rebotes</span></div><div><span class="n">+1</span><span class="eb">+/−</span></div></div><p class="desc">1/7 de tres, 2/2 de libres. 1 robo, 1 pérdida</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 6.4 puntos en 19.2′ (11 partidos), más cancha de la habitual (+10′).</p></div></div></article>
+<article class="c6" id="j4" data-sec="j4"><div class="id"><span class="ix">4</span><div><div class="pn">Zajac, Jose Antonio</div><div class="sub">29′ en cancha</div></div></div><div id="b-j4"><div class="st"><div><span class="ft">9</span><span class="eb">puntos</span></div><div><span class="n">29′</span><span class="eb">minutos</span></div><div><span class="n">3</span><span class="eb">rebotes</span></div><div><span class="n">−2</span><span class="eb">+/−</span></div></div><p class="desc">0/1 de dos, 3/8 de tres. 1 asistencia, 3 robos</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 6.7 puntos en 17.1′ (11 partidos), más cancha de la habitual (+12′).</p></div></div></article>
+<article class="c6" id="j5" data-sec="j5"><div class="id"><span class="ix">5</span><div><div class="pn">Chaves, Juan Pablo</div><div class="sub">El que más anotó</div></div></div><div id="b-j5"><div class="st"><div><span class="ft">13</span><span class="eb">puntos</span></div><div><span class="n">27′</span><span class="eb">minutos</span></div><div><span class="n">4</span><span class="eb">rebotes</span></div><div><span class="n">+5</span><span class="eb">+/−</span></div></div><p class="desc">2/6 de dos, 2/5 de tres, 3/4 de libres. 1 asistencia, 2 robos</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 10.0 puntos en 21.6′ (13 partidos).</p></div></div></article>
+<article class="c6" id="j6" data-sec="j6"><div class="id"><span class="ix">6</span><div><div class="pn">Mayorca, Lucas Emanuel</div><div class="sub">22′ en cancha</div></div></div><div id="b-j6"><div class="st"><div><span class="ft">10</span><span class="eb">puntos</span></div><div><span class="n">22′</span><span class="eb">minutos</span></div><div><span class="n">9</span><span class="eb">rebotes</span></div><div><span class="n">−6</span><span class="eb">+/−</span></div></div><p class="desc">1/4 de dos, 2/7 de tres, 2/6 de libres. 2 asistencias, 1 robo</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 8.7 puntos en 17.8′ (9 partidos).</p></div></div></article>
+<article class="c6" id="j7" data-sec="j7"><div class="id"><span class="ix">7</span><div><div class="pn">D'Alesio, Alejo</div><div class="sub">21′ en cancha</div></div></div><div id="b-j7"><div class="st"><div><span class="ft">7</span><span class="eb">puntos</span></div><div><span class="n">21′</span><span class="eb">minutos</span></div><div><span class="n">2</span><span class="eb">rebotes</span></div><div><span class="n">−3</span><span class="eb">+/−</span></div></div><p class="desc">1/5 de dos, 0/1 de tres, 5/8 de libres. 1 robo, 3 pérdidas</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 5.5 puntos en 20.6′ (12 partidos).</p></div></div></article>
+<article class="c6 aten" id="j8" data-sec="j8"><div class="id"><span class="ix">8</span><div><div class="pn">Garcia, Pablo German</div><div class="sub">14′ en cancha</div></div></div><button class="pk" data-toggle="j8" aria-expanded="false" aria-controls="b-j8"><span>14.3′ · 3 pts</span><span class="pm">＋</span></button><div id="b-j8" hidden><div class="st"><div><span class="ft">3</span><span class="eb">puntos</span></div><div><span class="n">14′</span><span class="eb">minutos</span></div><div><span class="n">0</span><span class="eb">rebotes</span></div><div><span class="n">+3</span><span class="eb">+/−</span></div></div><p class="desc">1/2 de tres</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 1.9 puntos en 8.2′ (15 partidos), más cancha de la habitual (+6′).</p></div></div></article>
+<article class="c6 aten" id="j9" data-sec="j9"><div class="id"><span class="ix">9</span><div><div class="pn">Vasquez, Fernando</div><div class="sub">12′ en cancha</div></div></div><button class="pk" data-toggle="j9" aria-expanded="false" aria-controls="b-j9"><span>11.8′ · 2 pts</span><span class="pm">＋</span></button><div id="b-j9" hidden><div class="st"><div><span class="ft">2</span><span class="eb">puntos</span></div><div><span class="n">12′</span><span class="eb">minutos</span></div><div><span class="n">3</span><span class="eb">rebotes</span></div><div><span class="n">+4</span><span class="eb">+/−</span></div></div><p class="desc">1/4 de dos, 0/1 de tres. 1 asistencia</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 1.6 puntos en 18.9′ (11 partidos), menos cancha de la habitual (−7′).</p></div></div></article>
+<article class="c6 aten" id="j10" data-sec="j10"><div class="id"><span class="ix">10</span><div><div class="pn">Fridman Mendez, A.</div><div class="sub">5′ en cancha</div></div></div><button class="pk" data-toggle="j10" aria-expanded="false" aria-controls="b-j10"><span>4.7′ · 0 pts</span><span class="pm">＋</span></button><div id="b-j10" hidden><div class="st"><div><span class="ft">0</span><span class="eb">puntos</span></div><div><span class="n">5′</span><span class="eb">minutos</span></div><div><span class="n">3</span><span class="eb">rebotes</span></div><div><span class="n">−2</span><span class="eb">+/−</span></div></div><p class="desc">0/1 de dos</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 2.0 puntos en 9.5′ (7 partidos).</p></div></div></article>
+
+</div>
+</div>
+
+<div class="blk" id="s-ellos" data-sec="ellos">
+<h2 class="h2"><button data-toggle="ellos" aria-expanded="false" aria-controls="b-ellos"><span>Ellos</span></button><span class="pm" aria-hidden="true">+</span></h2>
+<div class="sum">Usaron 8 jugadores.</div>
+<div id="b-ellos" hidden>
+<article class="c6" id="j1" data-sec="j1"><div class="id"><span class="ix">1</span><div><div class="pn">Gallone, Santiago Pedro</div><div class="sub">El que más anotó · el que más jugó</div></div></div><div id="b-j1"><div class="st"><div><span class="ft">19</span><span class="eb">puntos</span></div><div><span class="n">45′</span><span class="eb">minutos</span></div><div><span class="n">8</span><span class="eb">rebotes</span></div><div><span class="n">−2</span><span class="eb">+/−</span></div></div><p class="desc">5/10 de dos, 2/11 de tres, 3/6 de libres. 5 asistencias, 2 robos, 4 pérdidas</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 15.8 puntos en 33.7′ (13 partidos), más cancha de la habitual (+11′).</p></div></div></article>
+<article class="c6" id="j2" data-sec="j2"><div class="id"><span class="ix">2</span><div><div class="pn">Mallo, Santiago</div><div class="sub">41′ en cancha</div></div></div><div id="b-j2"><div class="st"><div><span class="ft">2</span><span class="eb">puntos</span></div><div><span class="n">41′</span><span class="eb">minutos</span></div><div><span class="n">5</span><span class="eb">rebotes</span></div><div><span class="n">−5</span><span class="eb">+/−</span></div></div><p class="desc">0/3 de dos, 2/2 de libres. 1 asistencia, 4 pérdidas</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 1.8 puntos en 16.5′ (13 partidos), más cancha de la habitual (+24′).</p></div></div></article>
+<article class="c6" id="j3" data-sec="j3"><div class="id"><span class="ix">3</span><div><div class="pn">Vercellone, I.</div><div class="sub">34′ en cancha</div></div></div><div id="b-j3"><div class="st"><div><span class="ft">13</span><span class="eb">puntos</span></div><div><span class="n">34′</span><span class="eb">minutos</span></div><div><span class="n">3</span><span class="eb">rebotes</span></div><div><span class="n">−2</span><span class="eb">+/−</span></div></div><p class="desc">3/4 de dos, 2/7 de tres, 1/2 de libres. 3 asistencias, 1 robo, 1 pérdida</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 6.8 puntos en 18.8′ (13 partidos), arriba de lo suyo, más cancha de la habitual (+15′).</p></div></div></article>
+<article class="c6" id="j4" data-sec="j4"><div class="id"><span class="ix">4</span><div><div class="pn">Navarro, Giuliano</div><div class="sub">Primer partido en la base · el que más bajó</div></div></div><div id="b-j4"><div class="st"><div><span class="ft">5</span><span class="eb">puntos</span></div><div><span class="n">31′</span><span class="eb">minutos</span></div><div><span class="n">21</span><span class="eb">rebotes</span></div><div><span class="n">−1</span><span class="eb">+/−</span></div></div><p class="desc">2/7 de dos, 1/2 de libres. 1 robo, 5 pérdidas</p><div class="qe"><div class="eb">Contra su temporada</div><p>Primer partido suyo en la base: no hay temporada contra qué leerlo.</p></div></div></article>
+<article class="c6" id="j5" data-sec="j5"><div class="id"><span class="ix">5</span><div><div class="pn">Perez, Ivan Ricardo</div><div class="sub">28′ en cancha</div></div></div><div id="b-j5"><div class="st"><div><span class="ft">13</span><span class="eb">puntos</span></div><div><span class="n">28′</span><span class="eb">minutos</span></div><div><span class="n">6</span><span class="eb">rebotes</span></div><div><span class="n">+10</span><span class="eb">+/−</span></div></div><p class="desc">1/4 de dos, 3/8 de tres, 2/2 de libres. 1 asistencia, 2 robos, 1 pérdida</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 2.9 puntos en 21.0′ (13 partidos), arriba de lo suyo, más cancha de la habitual (+7′).</p></div></div></article>
+<article class="c6" id="j6" data-sec="j6"><div class="id"><span class="ix">6</span><div><div class="pn">Molina, Agustin Nicolas</div><div class="sub">23′ en cancha</div></div></div><div id="b-j6"><div class="st"><div><span class="ft">7</span><span class="eb">puntos</span></div><div><span class="n">23′</span><span class="eb">minutos</span></div><div><span class="n">6</span><span class="eb">rebotes</span></div><div><span class="n">−1</span><span class="eb">+/−</span></div></div><p class="desc">3/8 de dos, 0/2 de tres, 1/2 de libres. 2 robos, 3 pérdidas</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 8.6 puntos en 21.8′ (12 partidos).</p></div></div></article>
+<article class="c6" id="j7" data-sec="j7"><div class="id"><span class="ix">7</span><div><div class="pn">Muñiz, Gonzalo Martin</div><div class="sub">21′ en cancha</div></div></div><div id="b-j7"><div class="st"><div><span class="ft">2</span><span class="eb">puntos</span></div><div><span class="n">21′</span><span class="eb">minutos</span></div><div><span class="n">3</span><span class="eb">rebotes</span></div><div><span class="n">−5</span><span class="eb">+/−</span></div></div><p class="desc">1/3 de dos, 0/2 de tres, 0/4 de libres. 1 asistencia</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 3.1 puntos en 16.0′ (13 partidos).</p></div></div></article>
+<article class="c6 aten" id="j8" data-sec="j8"><div class="id"><span class="ix">8</span><div><div class="pn">Acuña, Rodrigo Ariel</div><div class="sub">3′ en cancha</div></div></div><button class="pk" data-toggle="j8" aria-expanded="false" aria-controls="b-j8"><span>3.0′ · 0 pts</span><span class="pm">＋</span></button><div id="b-j8" hidden><div class="st"><div><span class="ft">0</span><span class="eb">puntos</span></div><div><span class="n">3′</span><span class="eb">minutos</span></div><div><span class="n">1</span><span class="eb">rebotes</span></div><div><span class="n">−4</span><span class="eb">+/−</span></div></div><p class="desc">Sin tiro de campo.</p><div class="qe"><div class="eb">Contra su temporada</div><p>Venía de 1.7 puntos en 9.6′ (3 partidos), menos cancha de la habitual (−7′).</p></div></div></article>
+
+</div>
+</div>
+</section>
+
+<section class="view" id="estrategia" data-screen-label="Estrategia">
+<nav class="chips" aria-label="Secciones de esta vista"><a class="chip" href="#s-plan" data-chip="plan">El plan</a><a class="chip" href="#s-atacamos" data-chip="atacamos">Cómo atacamos</a><a class="chip" href="#s-ritmo" data-chip="ritmo">El ritmo</a><button class="chip todo" data-todo>Contraer todo</button></nav>
+<h1 class="h1" style="margin-top:22px">El plan y lo que pasó</h1>
+
+<div class="blk" id="s-plan" data-sec="plan">
+<h2 class="h2"><button data-toggle="plan" aria-expanded="true" aria-controls="b-plan"><span>El plan, punto por punto</span></button><span class="pm" aria-hidden="true">−</span></h2>
+<div class="sum" hidden>4 de los 6 puntos cayeron a favor.</div>
+<div id="b-plan">
+<p class="gap12 p2">Los seis puntos que llevamos, reconstruidos desde la base <b>sin este partido adentro</b>: es el plan que se leyó antes de jugar, no una versión reescrita con el resultado a la vista.</p>
+<div class="note gap12">La etiqueta dice <b>dónde cayó el número</b>, no si se siguió la instrucción. La planilla no sabe si alguien hizo la cortina que se le pidió: sabe dónde terminó la magnitud.</div>
+<div class="c5 gap8"><span class="mk hi">▲</span><div><div class="tt" style="font:800 15px/1.2 Archivo,sans-serif"><span class="k" style="color:var(--tiza)">A1</span> Ni sueltos ni agarrotados</div><p>Cayó a favor. <a href="#estrategia" data-ir="m-tov" class="k" style="color:var(--tiza);text-decoration:none">ver el número →</a></p></div></div>
+<div class="c5 gap8"><span class="mk lo">▼</span><div><div class="tt" style="font:800 15px/1.2 Archivo,sans-serif"><span class="k" style="color:var(--tiza)">A2</span> El rebote de ataque es nuestro, no suyo</div><p>Cayó en contra. <a href="#estrategia" data-ir="m-rof" class="k" style="color:var(--tiza);text-decoration:none">ver el número →</a></p></div></div>
+<div class="c5 gap8"><span class="mk hi">▲</span><div><div class="tt" style="font:800 15px/1.2 Archivo,sans-serif"><span class="k" style="color:var(--tiza)">A3</span> A la línea se llega jugando</div><p>Cayó a favor. <a href="#estrategia" data-ir="m-ftr" class="k" style="color:var(--tiza);text-decoration:none">ver el número →</a></p></div></div>
+<div class="c5 gap8"><span class="mk lo">▼</span><div><div class="tt" style="font:800 15px/1.2 Archivo,sans-serif"><span class="k" style="color:var(--tiza)">A4</span> El tiro lo elige la posesión</div><p>Cayó en contra. <a href="#estrategia" data-ir="m-efg" class="k" style="color:var(--tiza);text-decoration:none">ver el número →</a></p></div></div>
+<div class="c5 gap8"><span class="mk hi">▲</span><div><div class="tt" style="font:800 15px/1.2 Archivo,sans-serif"><span class="k" style="color:var(--tiza)">D1</span> Marcar con los pies, no con las manos</div><p>Cayó a favor. <a href="#rival" data-ir="d-ftr" class="k" style="color:var(--tiza);text-decoration:none">ver el número →</a></p></div></div>
+<div class="c5 gap8"><span class="mk hi">▲</span><div><div class="tt" style="font:800 15px/1.2 Archivo,sans-serif"><span class="k" style="color:var(--tiza)">D2</span> No van a regalar nada</div><p>Cayó a favor. <a href="#rival" data-ir="d-tov" class="k" style="color:var(--tiza);text-decoration:none">ver el número →</a></p></div></div>
+
+</div>
+</div>
+
+<div class="blk" id="s-atacamos" data-sec="atacamos">
+<h2 class="h2"><button data-toggle="atacamos" aria-expanded="false" aria-controls="b-atacamos"><span>Cómo atacamos</span></button><span class="pm" aria-hidden="true">+</span></h2>
+<div class="sum">31.3% de efectividad, 12.9% de pérdidas, 0.213 de libres por tiro.</div>
+<div id="b-atacamos" hidden>
+<p class="gap12 p2">Las cinco magnitudes de nuestro ataque contra su marca.</p>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F"><span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;background:#EDF2EE"></span>el partido</span><span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #EDF2EE;box-sizing:border-box"></span>habitual</span><span style="display:flex;align-items:center;gap:6px"><span style="width:2px;height:12px;background:#8FA99F"></span>esperado</span></div>
+<div class="c4" id="m-efg"><div class="top"><div><div class="nm">Efectividad de tiro</div><div class="df">nuestro ataque</div></div><div class="v lo"><span class="mk">▼</span>31.3%</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:61.86%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:72.73%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:27.27%;width:10px;height:10px;margin-left:-5px;background:#5FA8E0"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#5FA8E0">31.3%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div><div style="position:absolute;top:27px;left:61.86%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">39.5%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div><div style="position:absolute;top:27px;left:82.12%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">42.1%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div></div><div class="ev gap8">−2.1 desvíos respecto de lo esperado</div><p class="lec">No entró. Es la magnitud que más se salió, y para el lado malo. 7 de 36 de dos (19.4%) y 11 de 39 de tres (28.2%). Por intento: el dos rindió 0.39 y el tres 0.85.</p><div class="c5" style="border-top:0;padding:10px 0 0"><span class="mk lo">▼</span><div><b class="lo">A4 · El tiro lo elige la posesión</b> Era un punto del plan. Cayó en contra.</div></div></div>
+<div class="c4" id="m-rate3"><div class="top"><div><div class="nm">Dieta de triples</div><div class="df">nuestro ataque</div></div><div class="v md"><span class="mk">─</span>52.0%</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:41.72%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:27.27%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:72.73%;width:10px;height:10px;margin-left:-5px;background:#EDF2EE"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">39.1%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div><div style="position:absolute;top:27px;left:47.53%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">43.2%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div><div style="position:absolute;top:27px;left:72.73%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">52.0%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div></div><div class="ev gap8">+1.9 desvíos respecto de lo esperado</div><p class="lec">Tiramos de afuera más de lo habitual. 39 de los 75 tiros fueron de tres.</p></div>
+<div class="c4" id="m-ftr"><div class="top"><div><div class="nm">Tiros libres</div><div class="df">nuestro ataque</div></div><div class="v hi"><span class="mk">▲</span>0.213</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:27.27%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:41.36%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:72.73%;width:10px;height:10px;margin-left:-5px;background:#E8C86A"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">0.126</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div><div style="position:absolute;top:27px;left:47.53%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">0.153</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div><div style="position:absolute;top:27px;left:72.73%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#E8C86A">0.213</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div></div><div class="ev gap8">+1.7 desvíos respecto de lo esperado</div><p class="lec">Llegamos a la línea más de lo que ellos suelen permitir. 16 de 25 desde la línea (64.0%).</p><div class="c5" style="border-top:0;padding:10px 0 0"><span class="mk hi">▲</span><div><b class="hi">A3 · A la línea se llega jugando</b> Era un punto del plan. Cayó a favor.</div></div></div>
+<div class="c4" id="m-tov"><div class="top"><div><div class="nm">Pérdidas</div><div class="df">nuestro ataque</div></div><div class="v hi"><span class="mk">▲</span>12.9%</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:69.81%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:72.73%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:27.27%;width:10px;height:10px;margin-left:-5px;background:#E8C86A"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#E8C86A">12.9%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div><div style="position:absolute;top:27px;left:69.81%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">18.2%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div><div style="position:absolute;top:27px;left:90.06%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">18.5%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div></div><div class="ev gap8">−1.4 desvíos respecto de lo esperado</div><p class="lec">Cuidamos la pelota mejor de lo que acostumbramos. 11 pérdidas en el partido.</p><div class="c5" style="border-top:0;padding:10px 0 0"><span class="mk hi">▲</span><div><b class="hi">A1 · Ni sueltos ni agarrotados</b> Era un punto del plan. Cayó a favor.</div></div></div>
+<div class="c4" id="m-rof"><div class="top"><div><div class="nm">Rebote de ataque</div><div class="df">nuestro ataque</div></div><div class="v lo"><span class="mk">▼</span>21.1%</div></div><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:57.03%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:72.73%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:27.27%;width:10px;height:10px;margin-left:-5px;background:#5FA8E0"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#5FA8E0">21.1%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div><div style="position:absolute;top:27px;left:57.03%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">26.6%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div><div style="position:absolute;top:27px;left:77.28%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">29.5%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div></div><div class="ev gap8">−1.3 desvíos respecto de lo esperado</div><p class="lec">Poca segunda chance: el tiro errado terminó siendo de ellos. 12 rebotes de ataque.</p><div class="c5" style="border-top:0;padding:10px 0 0"><span class="mk lo">▼</span><div><b class="lo">A2 · El rebote de ataque es nuestro, no suyo</b> Era un punto del plan. Cayó en contra.</div></div></div>
+
+</div>
+</div>
+
+<div class="blk" id="s-ritmo" data-sec="ritmo">
+<h2 class="h2"><button data-toggle="ritmo" aria-expanded="false" aria-controls="b-ritmo"><span>El ritmo</span></button><span class="pm" aria-hidden="true">+</span></h2>
+<div class="sum">76.8 posesiones a 40′ · esperadas 77.8.</div>
+<div id="b-ritmo" hidden>
+<p class="gap12 p2">Posesiones normalizadas a 40′: un suplementario tiene más posesiones por definición, no por elección.</p>
+<div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:60.33%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:49.93%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:39.67%;width:10px;height:10px;margin-left:-5px;background:#EDF2EE"></div><div style="position:absolute;top:27px;left:39.67%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">76.8</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">el partido</span></div><div style="position:absolute;top:27px;left:61.76%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">77.3</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">habitual</span></div><div style="position:absolute;top:27px;left:82.01%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">77.8</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">esperado</span></div></div>
+<div class="eb" style="margin-top:8px">posesiones por partido, a 40′</div>
+<p class="gap16">76.8 posesiones contra 77.8 esperadas. El ritmo fue el previsto: el partido no se decidió por ahí. En crudo fueron 85.0 posesiones, pero el partido duró 45′: normalizado a 40′ da 76.8.</p>
+</div>
+</div>
+<div class="note gap24">**Qué es dato y qué no.** Los números salen de la planilla oficial y se pueden verificar. Lo esperado sale del cruce contra la temporada sin este partido adentro. Y hay algo que la planilla no tiene: es un box score, así que **no sabemos de qué jugada salió ningún tiro**, ni quién estaba en cancha con quién, ni cómo se movió el partido por cuartos. Cuando acá dice que una magnitud cayó de un lado, dice eso y nada más: dónde terminó el número, no por qué.</div>
+</section>
+</div>
+
+<div id="glo" hidden><div class="w"><button class="x" data-glo-x>Cerrar ✕</button><h3></h3><p></p></div></div>
+<script type="application/json" id="glosario">{"posesiones": ["Posesión", "Cada vez que un equipo tiene la pelota hasta que la pierde, tira y no la recupera, o le cobran. Se estima con la fórmula de la planilla. Sirve para comparar equipos que juegan a distinto ritmo: 80 puntos en 90 posesiones no es lo mismo que 80 en 70."], "flex": ["FLEX", "El promedio de la categoría: FLEX Superior de la CABB. Es el contra qué se lee cada número. Un 65.9% solo no dice nada; contra el 73.5% de FLEX, sí."], "uso": ["Uso", "Qué porcentaje de las jugadas del equipo termina ese jugador mientras está en cancha, sea con un tiro, un libre o una pérdida. Alto uso no es bueno ni malo: dice quién tiene la pelota en la mano cuando se define."], "ts": ["TS%", "Acierto real: mide los puntos por intento contando dobles, triples y libres juntos. Es la forma honesta de comparar a uno que vive del triple con uno que vive de la pintura y la línea."], "3pi": ["3PI", "Triples intentados por partido. El volumen, no el acierto. Dice si lo busca, no si lo mete."], "neto": ["Neto", "Ataque menos defensa, cada 100 posesiones. Es el resumen de un equipo en un número: cuánto le saca (o le saca el rival) cada 100 pelotas."], "vale": ["Vale", "Cuántos puntos por partido nos suma o nos resta esa palanca en este cruce. Sale de comparar lo que hacemos habitualmente contra lo que suele conceder este rival. No se suman entre sí ni dan un marcador."], "marcas": ["▲ ─ ▼", "Alto, en la media y bajo respecto de FLEX. No significan bueno y malo: un ▼ en tiro concedido es excelente, y un ▲ en pérdidas es un problema."], "efectividad": ["Efectividad de tiro", "eFG%: el acierto de campo dándole al triple el 50% extra que vale. Un 40% tirando solo dobles y un 40% tirando triples no rinden lo mismo."], "rebote": ["Rebote de ataque", "Qué porcentaje de los propios errados recupera el equipo. Cada uno es una posesión extra que el rival no jugó."]}</script>
+
+<nav class="nav" aria-label="Secciones"><div class="w">
+<a class="tab" href="#resumen" data-v="resumen"><span class="sh"></span>Resumen</a>
+<a class="tab" href="#rival" data-v="rival"><span class="sh c"></span>El rival</a>
+<a class="tab" href="#jugadores" data-v="jugadores"><span class="sh t"></span>Jugadores</a>
+<a class="tab" href="#estrategia" data-v="estrategia"><span class="sh d"></span>Estrategia</a>
+</div></nav>
+<script>
+(function(){
+const V=['resumen','rival','jugadores','estrategia'];
+const GLO=JSON.parse(document.getElementById('glosario').textContent);
+const pan=document.getElementById('glo');
+const $=(s,r)=>(r||document).querySelector(s), $$=(s,r)=>[...(r||document).querySelectorAll(s)];
+
+function vista(){const h=location.hash.slice(1);return V.includes(h)?h:'resumen'}
+function go(){const v=vista();
+$$('.view').forEach(s=>s.classList.toggle('on',s.id===v));
+$$('.tab').forEach(t=>{const on=t.dataset.v===v;t.classList.toggle('on',on);on?t.setAttribute('aria-current','page'):t.removeAttribute('aria-current')});
+pan.hidden=true;window.scrollTo(0,0);spy()}
+
+function abrir(k,abrirla){const b=document.getElementById('b-'+k);if(!b)return;
+const bt=$('[data-toggle="'+k+'"]');const on=abrirla===undefined?b.hidden:abrirla;
+b.hidden=!on;if(bt){bt.setAttribute('aria-expanded',on?'true':'false');
+const pm=bt.querySelector('.pm')||bt.parentNode.querySelector('.pm');if(pm)pm.textContent=on?(pm.textContent==='＋'||pm.textContent==='－'?'－':'−'):(pm.textContent==='－'||pm.textContent==='＋'?'＋':'+')}
+const sm=$('#s-'+k+' > .sum');if(sm)sm.hidden=on}
+
+function ir(k){abrir(k,true);const el=document.getElementById('s-'+k)||document.getElementById(k);
+if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-100,behavior:'smooth'})}
+
+function spy(){const v=$('.view.on');if(!v)return;const secs=$$('[data-sec]',v);
+let act=null;for(const s of secs){if(s.getBoundingClientRect().top<130)act=s.dataset.sec}
+$$('.chip',v).forEach(c=>{const on=c.dataset.chip===act;
+on?c.setAttribute('aria-current','true'):c.removeAttribute('aria-current');
+if(on&&c.parentNode.scrollWidth>c.parentNode.clientWidth){
+const l=c.offsetLeft-c.parentNode.offsetLeft;c.parentNode.scrollTo({left:l-14,behavior:'smooth'})}})}
+
+document.addEventListener('click',e=>{
+const t=e.target.closest('[data-toggle],[data-g],[data-chip],[data-court],[data-todo],[data-glo-x],[data-ir],[data-eje],[data-mas-corto]');
+if(!t)return;
+if(t.dataset.toggle!==undefined){e.preventDefault();abrir(t.dataset.toggle)}
+else if(t.dataset.g!==undefined){e.preventDefault();const d=GLO[t.dataset.g];if(!d)return;
+$('h3',pan).textContent=d[0];$('p',pan).textContent=d[1];pan.hidden=false}
+else if(t.dataset.gloX!==undefined){e.preventDefault();pan.hidden=true}
+else if(t.dataset.chip!==undefined){e.preventDefault();ir(t.dataset.chip)}
+else if(t.dataset.eje!==undefined){e.preventDefault();
+const el=document.getElementById(t.dataset.eje);if(!el)return;
+const sc=el.closest('[data-sec]');if(sc)abrir(sc.dataset.sec,true);
+window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-100,behavior:'smooth'})}
+else if(t.dataset.ir!==undefined){e.preventDefault();
+/* la vista destino sale del href del propio link, no de una constante: el
+   resumen de partido salta a #rival tanto como a #estrategia */
+const h=(t.getAttribute('href')||'').replace('#','');location.hash=V.includes(h)?h:'estrategia';
+setTimeout(()=>{const el=document.getElementById(t.dataset.ir);
+if(el){const s=el.closest('[data-sec]');if(s)abrir(s.dataset.sec,true);
+window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-100,behavior:'smooth'})}},60)}
+else if(t.dataset.court!==undefined){e.preventDefault();const c=t.closest('.cch');
+c.classList.toggle('big');$('.zm',c).textContent=c.classList.contains('big')?'－ achicar':'＋ ampliar'}
+else if(t.dataset.todo!==undefined){e.preventDefault();const v=$('.view.on');
+const secs=$$('[data-toggle]',v).filter(b=>b.closest('.h2'));
+const cerrar=t.textContent.indexOf('Contraer')===0;
+secs.forEach(b=>abrir(b.dataset.toggle,!cerrar));
+t.textContent=cerrar?'Abrir todo':'Contraer todo'}
+else if(t.dataset.masCorto!==undefined){e.preventDefault();t.hidden=true;
+t.parentNode.querySelector('[data-mas-largo]').hidden=false}});
+
+let tic=false;
+addEventListener('scroll',()=>{if(tic)return;tic=true;
+requestAnimationFrame(()=>{tic=false;spy()})},{passive:true});
+addEventListener('hashchange',go);go();
+})();
+</script>
+</body></html>
