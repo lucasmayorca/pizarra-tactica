@@ -6,7 +6,7 @@
 <style>
 :root{
   --board:#14322B; --deep:#0F2620; --chalk:#EDF2EE; --dim:#8FA99F;
-  --rule:rgba(237,242,238,.17); --rule2:rgba(237,242,238,.10); --rule3:rgba(237,242,238,.28);
+  --rule:rgba(237,242,238,.17); --rule2:rgba(237,242,238,.10);
   --tiza:#E8C86A; --azul:#5FA8E0; --grid:rgba(237,242,238,.03);
   --pad:18px;
 }
@@ -27,7 +27,6 @@ b,strong{font-weight:600;color:var(--chalk)}
 .n{font:500 13px/1.3 'IBM Plex Mono',ui-monospace,monospace;white-space:nowrap}
 .ev{font:400 10.5px/1.45 'IBM Plex Mono',ui-monospace,monospace;color:var(--dim)}
 
-/* ── cabecera ─────────────────────────────── */
 .top{padding:34px 0 0}
 .eb{font:600 8.5px/1.3 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--dim)}
 .hero{font:800 46px/.9 Archivo,sans-serif;color:var(--tiza);letter-spacing:-.015em;margin-top:10px;text-wrap:balance}
@@ -37,7 +36,6 @@ b,strong{font-weight:600;color:var(--chalk)}
 .rec div{display:flex;flex-direction:column;gap:4px}
 .rec .ft{font:800 24px/1 Archivo,sans-serif;color:var(--chalk)}
 
-/* ── navegación ───────────────────────────── */
 .chips{position:sticky;top:0;z-index:5;background:var(--board);border-bottom:1px solid var(--rule);
   margin:26px calc(var(--pad)*-1) 0;padding:9px var(--pad);display:flex;gap:7px;overflow-x:auto;
   scrollbar-width:none}
@@ -46,7 +44,6 @@ b,strong{font-weight:600;color:var(--chalk)}
   color:var(--dim);border:1px solid var(--rule);padding:7px 10px;text-decoration:none}
 .chips a:hover,.chips a:focus-visible{color:var(--tiza);border-color:var(--tiza);outline:none}
 
-/* ── bloques ──────────────────────────────── */
 .blk{margin-top:46px;scroll-margin-top:52px}
 .h2{font:800 17px/1.1 Archivo,sans-serif;text-transform:uppercase;padding-bottom:10px;
   border-bottom:1.5px solid var(--rule);text-wrap:balance}
@@ -59,13 +56,11 @@ b,strong{font-weight:600;color:var(--chalk)}
   display:grid;grid-template-columns:20px minmax(0,1fr);margin-top:18px}
 .warn b{color:var(--tiza)}
 
-/* ── cifra héroe ──────────────────────────── */
 .big{margin-top:22px;padding-top:16px;border-top:1px solid var(--rule)}
 .big .ft{font:800 40px/.95 Archivo,sans-serif;color:var(--tiza)}
 .big .ft.s{font-size:30px}
 .big .eb{margin-top:9px}
 
-/* ── tira (FLEX · nosotros · rival) ───────── */
 .tira{margin-top:16px}
 .tira .lab{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .tira .lab .nm{font:600 13.5px/1.25 Archivo,sans-serif}
@@ -73,7 +68,6 @@ b,strong{font-weight:600;color:var(--chalk)}
 .tira svg{display:block;width:100%;height:auto;margin-top:8px}
 .tira .ft{font:400 9px/1.3 'IBM Plex Mono',monospace;color:var(--dim);letter-spacing:.06em;margin-top:5px}
 
-/* ── tablas ───────────────────────────────── */
 .tw{overflow-x:auto;margin-top:16px;-webkit-overflow-scrolling:touch}
 table{border-collapse:collapse;width:100%;font:500 12.5px/1.35 'IBM Plex Mono',monospace;white-space:nowrap}
 caption{text-align:left;font:600 8.5px/1.3 Archivo,sans-serif;text-transform:uppercase;
@@ -86,9 +80,10 @@ td:first-child{text-align:left;padding-left:0;font-family:'IBM Plex Sans',sans-s
   font-weight:400;white-space:normal;min-width:11ch}
 tr:last-child td{border-bottom:0}
 tbody tr.sum td{border-top:1px solid var(--rule);border-bottom:0;color:var(--tiza);font-weight:500}
-.mk{width:1.1em;display:inline-block;text-align:center}
 
-/* ── lista de ítems ───────────────────────── */
+.chart{margin-top:18px}
+.chart svg{display:block;width:100%;height:auto}
+
 .it{border-top:1px solid var(--rule);padding:15px 0}
 .h2+.it{border-top:0}
 .it .nm{font:600 14.5px/1.3 Archivo,sans-serif}
@@ -99,15 +94,6 @@ tbody tr.sum td{border-top:1px solid var(--rule);border-bottom:0;color:var(--tiz
 .itg .mk{font-size:12px;line-height:20px;color:var(--tiza)}
 .itg p:first-of-type{margin-top:0;color:var(--chalk);font-size:14px}
 
-/* ── gráfico de barras divergente ─────────── */
-.chart{margin-top:18px}
-.chart svg{display:block;width:100%;height:auto}
-.leg{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font:400 9px/1.3 'IBM Plex Mono',monospace;
-  color:var(--dim);letter-spacing:.05em}
-.leg span{display:flex;align-items:center;gap:6px}
-.sw{width:11px;height:11px;flex:0 0 auto}
-
-/* ── pie ──────────────────────────────────── */
 .foot{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule)}
 .foot p{font-size:12.5px;line-height:1.55;color:var(--dim);margin-top:10px;max-width:48ch}
 :focus-visible{outline:2px solid var(--tiza);outline-offset:2px}
@@ -119,14 +105,14 @@ tbody tr.sum td{border-top:1px solid var(--rule);border-bottom:0;color:var(--tiz
 <div class="wrap">
 
 <header class="top">
-  <div class="eb">Unión Vecinal de Munro · FLEX Superior · 16 planillas</div>
+  <div class="eb">Unión Vecinal de Munro · FLEX Superior · 17 planillas · al 5/10/2026</div>
   <h1 class="hero">Cómo ganamos<br>y cómo perdemos</h1>
-  <p class="lede">Autoscouting de la temporada 2026 sobre las 16 planillas oficiales. Todo lo de acá sale del box score: <b>no hay jugada a jugada, no hay mapa de tiro, no hay parciales</b>. Lo que sí hay, alcanza para tres decisiones concretas.</p>
+  <p class="lede">Autoscouting sobre las 17 planillas de 2026, calibrado contra las 132 de la competición. Los cuatro partidos de Fase 2 <b>pesan doble</b>: a esa fase pasaron los que ganaron su zona, así que dicen más de cómo estamos hoy. Todo sale del box score.</p>
   <div class="rec">
-    <div><span class="ft">10 – 6</span><span class="eb">récord</span></div>
-    <div><span class="ft">84.9</span><span class="eb">ORtg · 6º de 12</span></div>
-    <div><span class="ft">79.0</span><span class="eb">DRtg · 6º de 12</span></div>
-    <div><span class="ft">+5.9</span><span class="eb">neto cada 100</span></div>
+    <div><span class="ft">11 – 6</span><span class="eb">récord</span></div>
+    <div><span class="ft hi">4 – 0</span><span class="eb">en Fase 2 · primeros</span></div>
+    <div><span class="ft">84.6</span><span class="eb">ORtg · 5º de 14</span></div>
+    <div><span class="ft">79.3</span><span class="eb">DRtg · 8º de 14</span></div>
   </div>
 </header>
 
@@ -136,151 +122,141 @@ tbody tr.sum td{border-top:1px solid var(--rule);border-bottom:0;color:var(--tiz
   <a href="#defensa">La defensa</a>
   <a href="#tiro">El tiro</a>
   <a href="#linea">La línea</a>
-  <a href="#pelota">La pelota</a>
+  <a href="#fase2">Fase 2</a>
   <a href="#jugadores">Jugadores</a>
   <a href="#plan">El plan</a>
   <a href="#limites">Límites</a>
 </nav>
 
-<!-- ══════════════════════════════════════ -->
 <section class="blk" id="tesis">
   <h2 class="h2">La tesis, en una línea</h2>
-  <p><b>Somos el equipo que mejor mueve la pelota de toda la liga y el que peor la termina cerca del aro y en la línea.</b> Esa contradicción explica por qué ganamos 10 de 16 con un ataque apenas sobre la media: la posesión se construye bien y se remata mal.</p>
+  <p><b>Todo lo colectivo nos sale entre los mejores de la liga, y el tiro de adentro es el 13º de 14.</b> Rebote en los dos tableros, cuidado de la pelota, pase, y una defensa que te empuja al perímetro: ahí estamos arriba. El doble es el único eje donde estamos abajo del todo, y es el que más puntos deja en la cancha.</p>
 
   <div class="tw">
   <table>
-    <caption>Munro entre los 12 equipos legibles de FLEX (5+ partidos)</caption>
-    <thead><tr><th scope="col">Eje</th><th scope="col">Munro</th><th scope="col">FLEX</th><th scope="col">Puesto</th></tr></thead>
+    <caption>Munro entre los 14 equipos legibles de FLEX (5+ partidos) · todo ponderado por fase</caption>
+    <thead><tr><th scope="col">Eje</th><th scope="col">Munro</th><th scope="col">Mediana</th><th scope="col">Puesto</th></tr></thead>
     <tbody>
-      <tr><td>Asistencias por canasta</td><td class="hi">0.526</td><td>0.444</td><td class="hi">1º</td></tr>
-      <tr><td>Triple</td><td class="hi">29.6%</td><td>25.2%</td><td class="hi">2º</td></tr>
-      <tr><td>Rebote defensivo</td><td class="hi">78.3%</td><td>74.7%</td><td class="hi">2º</td></tr>
-      <tr><td>Rebote de ataque</td><td class="hi">28.8%</td><td>25.3%</td><td class="hi">3º</td></tr>
-      <tr><td>Cuidado de la pelota</td><td>18.2%</td><td>19.4%</td><td>4º</td></tr>
-      <tr><td>Tiro de dos</td><td class="lo">39.3%</td><td>42.0%</td><td class="lo">9º</td></tr>
-      <tr><td>Llegada a la línea</td><td class="lo">0.299</td><td>0.335</td><td class="lo">9º</td></tr>
-      <tr><td>Tiro libre</td><td class="lo">52.6%</td><td>54.8%</td><td class="lo">11º</td></tr>
+      <tr><td>% de triples que obliga</td><td class="hi">0.460</td><td>0.421</td><td class="hi">2º</td></tr>
+      <tr><td>Rebote defensivo</td><td class="hi">0.798</td><td>0.769</td><td class="hi">2º</td></tr>
+      <tr><td>Triple</td><td class="hi">28.3%</td><td>27.2%</td><td class="hi">3º</td></tr>
+      <tr><td>Rebote de ataque</td><td class="hi">0.280</td><td>0.248</td><td class="hi">3º</td></tr>
+      <tr><td>Cuidado de la pelota</td><td class="hi">0.171</td><td>0.182</td><td class="hi">3º</td></tr>
+      <tr><td>Asistencias por canasta</td><td class="hi">0.503</td><td>0.482</td><td class="hi">4º</td></tr>
+      <tr><td>Tiro libre</td><td>56.0%</td><td>56.4%</td><td>8º</td></tr>
+      <tr><td>Llegada a la línea</td><td class="lo">0.306</td><td>0.324</td><td class="lo">11º</td></tr>
+      <tr><td>Tiro de dos</td><td class="lo">38.6%</td><td>42.8%</td><td class="lo">13º</td></tr>
     </tbody>
   </table>
   </div>
   <p class="ev">llegada a la línea = tiros libres intentados por cada tiro de cancha</p>
 
-  <div class="note"><b>Cómo leer esto.</b> Arriba está lo que sabemos hacer; abajo, lo que nos come. Ningún puesto es «bueno» o «malo» por sí solo: es alto o bajo contra la competición. Lo que lo vuelve una tesis es que los cuatro de arriba son <b>colectivos</b> (pase, rebote, cuidado) y los tres de abajo son <b>individuales y entrenables</b> (terminar adentro, buscar el contacto, la línea).</div>
+  <div class="note"><b>Qué cambió desde la versión anterior.</b> Con el partido de Italiano adentro y la Fase 2 pesando doble, <b>la línea dejó de ser el agujero</b> —pasó de 11º de 12 a 8º de 14— y el <b>tiro de dos empeoró</b>: de 9º a 13º. El diagnóstico se corrió: el problema ya no está repartido entre el aro y la línea, está casi todo en el aro.</div>
 </section>
 
-<!-- ══════════════════════════════════════ -->
 <section class="blk" id="split">
-  <h2 class="h2">Ganar y perder: de dónde salen los 25 puntos</h2>
-  <p>Entre una victoria media y una derrota media hay <b>25.2 puntos de margen</b>. Descompuesto por origen del punto, el reparto es brutal y no está donde uno esperaría.</p>
+  <h2 class="h2">Ganar y perder: de dónde salen los 22 puntos</h2>
+  <p>Entre una victoria media y una derrota media hay <b>22.1 puntos de margen</b>. Descompuesto por origen del punto, el reparto sigue sin estar donde uno esperaría.</p>
 
   <div class="tw">
   <table>
-    <caption>Puntos por partido · victorias (10) contra derrotas (6)</caption>
+    <caption>Puntos por partido ponderado · victorias (11) contra derrotas (6)</caption>
     <thead><tr><th scope="col"></th><th scope="col">En G</th><th scope="col">En P</th><th scope="col">Δ</th></tr></thead>
     <tbody>
-      <tr><td>Nuestros puntos de tres</td><td>25.8</td><td>20.5</td><td class="hi">+5.3</td></tr>
-      <tr><td>Nuestros puntos de libre</td><td>11.7</td><td>8.7</td><td class="hi">+3.0</td></tr>
-      <tr><td>Nuestros puntos de dos</td><td>30.6</td><td>33.3</td><td class="lo">−2.7</td></tr>
-      <tr class="sum"><td>Lo que anotamos</td><td>68.1</td><td>62.5</td><td>+5.6</td></tr>
-      <tr><td>Sus puntos de tres</td><td>15.3</td><td>28.5</td><td class="hi">−13.2</td></tr>
-      <tr><td>Sus puntos de libre</td><td>11.9</td><td>16.2</td><td class="hi">−4.3</td></tr>
-      <tr><td>Sus puntos de dos</td><td>28.2</td><td>30.3</td><td class="lo">−2.1</td></tr>
-      <tr class="sum"><td>Lo que recibimos</td><td>55.4</td><td>75.0</td><td>−19.6</td></tr>
-      <tr class="sum"><td>MARGEN</td><td>+12.7</td><td>−12.5</td><td>+25.2</td></tr>
+      <tr><td>Nuestros puntos de tres</td><td>25.2</td><td>20.5</td><td class="hi">+4.7</td></tr>
+      <tr><td>Nuestros puntos de libre</td><td>13.0</td><td>8.7</td><td class="hi">+4.3</td></tr>
+      <tr><td>Nuestros puntos de dos</td><td>30.4</td><td>33.3</td><td class="lo">−2.9</td></tr>
+      <tr class="sum"><td>Lo que anotamos</td><td>68.6</td><td>62.5</td><td>+6.1</td></tr>
+      <tr><td>Sus puntos de tres</td><td>19.0</td><td>28.5</td><td class="hi">−9.5</td></tr>
+      <tr><td>Sus puntos de libre</td><td>11.7</td><td>16.2</td><td class="hi">−4.5</td></tr>
+      <tr><td>Sus puntos de dos</td><td>28.3</td><td>30.3</td><td class="lo">−2.0</td></tr>
+      <tr class="sum"><td>Lo que recibimos</td><td>59.0</td><td>75.0</td><td>−16.0</td></tr>
+      <tr class="sum"><td>MARGEN</td><td>+9.6</td><td>−12.5</td><td>+22.1</td></tr>
     </tbody>
   </table>
   </div>
 
   <div class="big">
-    <div class="ft">18.5 de 25.2</div>
+    <div class="ft">14.2 de 22.1</div>
     <div class="eb">del margen entre ganar y perder se juega en la línea de tres · los dos lados sumados</div>
   </div>
   <div class="big">
-    <div class="ft s">7.3 de 25.2</div>
+    <div class="ft s">8.8 de 22.1</div>
     <div class="eb">se juega en la línea de libres · los dos lados sumados</div>
   </div>
   <div class="big">
-    <div class="ft s">−4.8</div>
+    <div class="ft s">−0.9</div>
     <div class="eb">aporta el juego de dos · va en contra: en las derrotas metemos MÁS de adentro</div>
   </div>
 
-  <p>Lo primero que hay que desarmar es el reflejo de vestuario: <b>«perdimos porque no entró nada».</b> No es cierto. Nuestro eFG es prácticamente el mismo en victorias (<span class="n">0.415</span>) que en derrotas (<span class="n">0.410</span>). Y de dos metemos <b>mejor cuando perdemos</b> (41.2% contra 38.2%). La diferencia no está en si nos entra: está en el triple del rival, en la línea y en la pelota.</p>
+  <p>Lo primero que hay que desarmar es el reflejo de vestuario: <b>«perdimos porque no entró nada».</b> Nuestro eFG es <b>peor en las victorias</b> (0.399) que en las derrotas (0.410), y de dos metemos 37.6% ganando contra 41.2% perdiendo. La diferencia no está en si nos entra: está en el triple del rival, en la línea y en la pelota.</p>
+  <p class="ev">pérdidas: 15.2% de las posesiones en las victorias · 21.9% en las derrotas</p>
 </section>
 
-<!-- ══════════════════════════════════════ -->
 <section class="blk" id="defensa">
   <h2 class="h2">La defensa: el volumen de afuera es el partido</h2>
-  <p>Este es el hallazgo más fuerte de la temporada y es una sola línea: <b>importa cuántos triples tira el rival, no cuántos mete.</b></p>
+  <p>Sigue siendo el hallazgo más fuerte de la temporada, y el partido de Italiano no lo rompió —lo puso al límite—: <b>importa cuántos triples tira el rival, no cuántos mete.</b></p>
 
   <div class="chart">
-    <svg viewBox="0 0 340 300" role="img" aria-label="Triples que intentó el rival en cada uno de los 16 partidos, ordenados de menos a más. Los ocho partidos con menos de 28 intentos son todos victorias; de los ocho con 28 o más, seis son derrotas.">
-      <!-- eje -->
+      <svg viewBox="0 0 340 300" role="img" aria-label="Triples que intentó el rival en cada uno de los 17 partidos, ordenados de menos a más. Los ocho partidos con menos de 28 intentos son todos victorias; de los nueve con 28 o más, seis son derrotas.">
       <line x1="86" y1="10" x2="86" y2="268" stroke="rgba(237,242,238,.10)" stroke-width="1"/>
       <line x1="86" y1="268" x2="330" y2="268" stroke="rgba(237,242,238,.10)" stroke-width="1"/>
-      <!-- corte en 28 -->
       <line x1="259.6" y1="6" x2="259.6" y2="268" stroke="#E8C86A" stroke-width="1" stroke-dasharray="3 3" opacity=".65"/>
-      <text x="263" y="14" fill="#E8C86A" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing=".05em">28 intentos</text>
-
-      <!-- barras: y = 22 + i*15.4 -->
-      <g font-family="'IBM Plex Mono',monospace" font-size="9" fill="#8FA99F">
-        <text x="82" y="28" text-anchor="end">U.FLORIDA</text>
-        <text x="82" y="43" text-anchor="end">CYP VERDE</text>
-        <text x="82" y="58" text-anchor="end">CYP VERDE</text>
-        <text x="82" y="74" text-anchor="end">S.FERNANDO</text>
-        <text x="82" y="89" text-anchor="end">FLORIDA C.</text>
-        <text x="82" y="104" text-anchor="end">U.FLORIDA</text>
-        <text x="82" y="120" text-anchor="end">FLORIDA C.</text>
-        <text x="82" y="135" text-anchor="end">CEPA B</text>
-        <text x="82" y="150" text-anchor="end">CEPA B</text>
-        <text x="82" y="166" text-anchor="end">CYP AZUL</text>
-        <text x="82" y="181" text-anchor="end">V.ADELINA</text>
-        <text x="82" y="196" text-anchor="end">BANADE</text>
-        <text x="82" y="212" text-anchor="end">V.ADELINA</text>
-        <text x="82" y="227" text-anchor="end">VICTORIA C</text>
-        <text x="82" y="242" text-anchor="end">BOCA TIGRE</text>
-        <text x="82" y="258" text-anchor="end">VICTORIA C</text>
-      </g>
-      <!-- escala: 6.2 px por intento desde x=86 -->
-      <g>
-        <rect x="86" y="21" width="80.6" height="9" fill="#E8C86A"/>
-        <rect x="86" y="36" width="124" height="9" fill="#E8C86A"/>
-        <rect x="86" y="52" width="142.6" height="9" fill="#E8C86A"/>
-        <rect x="86" y="67" width="148.8" height="9" fill="#E8C86A"/>
-        <rect x="86" y="82" width="155" height="9" fill="#E8C86A"/>
-        <rect x="86" y="98" width="155" height="9" fill="#E8C86A"/>
-        <rect x="86" y="113" width="161.2" height="9" fill="#E8C86A"/>
-        <rect x="86" y="128" width="167.4" height="9" fill="#E8C86A"/>
-        <rect x="86" y="144" width="179.8" height="9" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
-        <rect x="86" y="159" width="186" height="9" fill="#E8C86A"/>
-        <rect x="86" y="174" width="198.4" height="9" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
-        <rect x="86" y="190" width="217" height="9" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
-        <rect x="86" y="205" width="223.2" height="9" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
-        <rect x="86" y="220" width="235.6" height="9" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
-        <rect x="86" y="236" width="235.6" height="9" fill="#E8C86A"/>
-        <rect x="86" y="251" width="235.6" height="9" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
-      </g>
-      <!-- cifras -->
-      <g font-family="'IBM Plex Mono',monospace" font-size="9">
-        <text x="170.6" y="29" fill="#8FA99F">13</text>
-        <text x="214" y="44" fill="#8FA99F">20</text>
-        <text x="232.6" y="59" fill="#8FA99F">23</text>
-        <text x="238.8" y="75" fill="#8FA99F">24</text>
-        <text x="245" y="90" fill="#8FA99F">25</text>
-        <text x="245" y="105" fill="#8FA99F">25</text>
-        <text x="251.2" y="121" fill="#8FA99F">26</text>
-        <text x="257.4" y="136" fill="#8FA99F">27</text>
-        <text x="269.8" y="151" fill="#8FA99F">29</text>
-        <text x="276" y="167" fill="#8FA99F">30</text>
-        <text x="288.4" y="182" fill="#8FA99F">32</text>
-        <text x="307" y="197" fill="#8FA99F">35</text>
-        <text x="313.2" y="213" fill="#8FA99F">36</text>
-        <text x="325.6" y="228" fill="#8FA99F">38</text>
-        <text x="325.6" y="243" fill="#8FA99F">38</text>
-        <text x="325.6" y="258" fill="#8FA99F">38</text>
-      </g>
+      <text x="263.6" y="14" fill="#E8C86A" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing=".05em">28 intentos</text>
+      <text x="82" y="27.5" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">U.FLORIDA</text>
+      <rect x="86" y="20.0" width="80.6" height="9" fill="#E8C86A"/>
+      <text x="170.6" y="27.5" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">13</text>
+      <text x="82" y="42.0" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">CYP VERDE</text>
+      <rect x="86" y="34.5" width="124.0" height="9" fill="#E8C86A"/>
+      <text x="214.0" y="42.0" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">20</text>
+      <text x="82" y="56.5" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">CYP VERDE</text>
+      <rect x="86" y="49.0" width="142.6" height="9" fill="#E8C86A"/>
+      <text x="232.6" y="56.5" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">23</text>
+      <text x="82" y="71.0" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">S.FERNANDO</text>
+      <rect x="86" y="63.5" width="148.8" height="9" fill="#E8C86A"/>
+      <text x="238.8" y="71.0" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">24</text>
+      <text x="82" y="85.5" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">FLORIDA C.</text>
+      <rect x="86" y="78.0" width="155.0" height="9" fill="#E8C86A"/>
+      <text x="245.0" y="85.5" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">25</text>
+      <text x="82" y="100.0" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">U.FLORIDA</text>
+      <rect x="86" y="92.5" width="155.0" height="9" fill="#E8C86A"/>
+      <text x="245.0" y="100.0" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">25</text>
+      <text x="82" y="114.5" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">FLORIDA C.</text>
+      <rect x="86" y="107.0" width="161.2" height="9" fill="#E8C86A"/>
+      <text x="251.2" y="114.5" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">26</text>
+      <text x="82" y="129.0" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">CEPA B</text>
+      <rect x="86" y="121.5" width="167.4" height="9" fill="#E8C86A"/>
+      <text x="257.4" y="129.0" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">27</text>
+      <text x="82" y="143.5" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">CEPA B</text>
+      <rect x="86.7" y="136.7" width="178.4" height="7.6" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
+      <text x="269.8" y="143.5" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">29</text>
+      <text x="82" y="158.0" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">ITALIANO</text>
+      <rect x="86" y="150.5" width="179.8" height="9" fill="#E8C86A"/>
+      <text x="269.8" y="158.0" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">29</text>
+      <text x="82" y="172.5" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">CYP AZUL</text>
+      <rect x="86" y="165.0" width="186.0" height="9" fill="#E8C86A"/>
+      <text x="276.0" y="172.5" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">30</text>
+      <text x="82" y="187.0" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">V.ADELINA</text>
+      <rect x="86.7" y="180.2" width="197.0" height="7.6" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
+      <text x="288.4" y="187.0" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">32</text>
+      <text x="82" y="201.5" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">BANADE</text>
+      <rect x="86.7" y="194.7" width="215.6" height="7.6" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
+      <text x="307.0" y="201.5" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">35</text>
+      <text x="82" y="216.0" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">V.ADELINA</text>
+      <rect x="86.7" y="209.2" width="221.8" height="7.6" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
+      <text x="313.2" y="216.0" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">36</text>
+      <text x="82" y="230.5" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">VICTORIA C</text>
+      <rect x="86.7" y="223.7" width="234.2" height="7.6" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
+      <text x="325.6" y="230.5" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">38</text>
+      <text x="82" y="245.0" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">BOCA TIGRE</text>
+      <rect x="86" y="237.5" width="235.6" height="9" fill="#E8C86A"/>
+      <text x="325.6" y="245.0" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">38</text>
+      <text x="82" y="259.5" text-anchor="end" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">VICTORIA C</text>
+      <rect x="86.7" y="252.7" width="234.2" height="7.6" fill="none" stroke="#5FA8E0" stroke-width="1.4"/>
+      <text x="325.6" y="259.5" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">38</text>
       <text x="86" y="284" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing=".05em">triples que intentó el rival</text>
       <text x="86" y="296" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing=".05em">lleno = ganamos · hueco = perdimos</text>
-    </svg>
+      </svg>
   </div>
 
   <div class="big">
@@ -288,304 +264,297 @@ tbody tr.sum td{border-top:1px solid var(--rule);border-bottom:0;color:var(--tiz
     <div class="eb">cuando el rival intenta menos de 28 triples</div>
   </div>
   <div class="big">
-    <div class="ft s">2 – 6</div>
-    <div class="eb">cuando intenta 28 o más</div>
+    <div class="ft s">3 – 6</div>
+    <div class="eb">cuando intenta 28 o más · y las tres victorias fueron por 8, 2 y 2</div>
   </div>
 
-  <p>Las dos victorias del lado malo del corte son las dos en que <b>le empatamos o le ganamos el volumen</b>: Boca del Tigre 38 contra 38, Caza y Pesca Azul 39 contra 30. En las seis derrotas solo una vez tiramos más triples que ellos, y fue por uno.</p>
+  <p>Cuando el rival se suelta de afuera, <b>el partido se va a la última pelota</b>: Boca del Tigre 38 intentos y ganamos por 8, Caza y Pesca Azul 30 y ganamos por 2, Italiano 29 y ganamos por 2. Del otro lado, las seis derrotas están todas ahí. Y las dos victorias más cómodas del lado malo del corte son las dos en que <b>les empatamos o les ganamos el volumen</b> (Boca 38–38, CyP Azul 39–30).</p>
 
   <h3 class="h3">La pared es real; la mano fría, no se puede afirmar</h3>
-  <p>Contra nosotros los rivales tiran de afuera <b>mucho más que contra cualquier otro</b>, y eso no es azar. Que además <b>fallen</b> más de lo suyo, sí puede serlo.</p>
+  <p>Contra nosotros los rivales tiran de afuera mucho más que contra cualquier otro, y con 1.058 tiros de muestra eso ya no es azar. Que además <b>fallen</b> más de lo suyo, sigue sin sostenerse.</p>
 
   <div class="tw">
   <table>
     <caption>El rival contra nosotros, contra su propia norma del resto de la temporada</caption>
     <thead><tr><th scope="col"></th><th scope="col">Vs Munro</th><th scope="col">Su norma</th><th scope="col">z</th></tr></thead>
     <tbody>
-      <tr><td>% de sus tiros que son de tres</td><td class="hi">45.9%</td><td>40.7%</td><td class="hi">+3.31</td></tr>
-      <tr><td>% que mete de tres</td><td>23.5%</td><td>26.2%</td><td class="dim">−1.31</td></tr>
+      <tr><td>% de sus tiros que son de tres</td><td class="hi">46.1%</td><td>40.3%</td><td class="hi">+3.83</td></tr>
+      <tr><td>% que mete de tres</td><td>24.8%</td><td>25.8%</td><td class="dim">−0.53</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="ev">z sobre 1001 tiros de cancha y 459 triples · |z| &gt; 1.96 = difícil que sea azar</p>
+  <p class="ev">z sobre 1.058 tiros de cancha y 488 triples · |z| &gt; 1.96 = difícil que sea azar</p>
 
-  <p>Empujarlos afuera es una propiedad estructural de cómo defendemos: <b>+3.31 desvíos, 1001 tiros de muestra.</b> Que metan 23.5% en vez de 26.2% está dentro de lo que hace el azar con 459 intentos, así que <b>no podemos decir «contestamos bien el triple»</b>. Lo que podemos decir es que los mandamos al tiro que menos rinde en esta liga —0.76 puntos por intento— y después hay que vivir con la moneda.</p>
+  <p>Empujarlos afuera es una propiedad estructural de cómo defendemos y se reforzó con los partidos nuevos: de <span class="n">+3.31</span> a <span class="n">+3.83</span> desvíos. El acierto que les concedemos, en cambio, se acercó a su norma: <span class="n">−0.53</span>. <b>No podemos decir «contestamos bien el triple».</b> Sí podemos decir que los mandamos al tiro que menos rinde en esta liga —0.74 puntos por intento— y después hay que vivir con la moneda.</p>
 
-  <div class="warn"><span>⚠</span><span><b>El riesgo del método.</b> Si el plan es mandarlos afuera, una noche caliente del rival nos gana sola. Victoria C nos metió 35.5% y 36.8% en los dos cruces —muy por encima de su 26.3% habitual— y son dos de las seis derrotas. El seguro contra eso no es cambiar de plan: es <b>bajarles los intentos</b>, que es lo único que controlamos.</span></div>
+  <div class="warn"><span>⚠</span><span><b>El riesgo del método.</b> Si el plan es mandarlos afuera, una noche caliente del rival nos gana sola. Italiano nos tiró <b>29 de 57 de afuera y metió el 44.8%</b> —su mejor noche del año— y estuvimos a una pelota de perder. Victoria C nos metió 35.5% y 36.8% en los dos cruces. El seguro no es cambiar de plan: es <b>bajarles los intentos</b>, que es lo único que controlamos.</span></div>
 
   <h3 class="h3">El rebote de ataque del rival, el segundo tornillo</h3>
-  <p>El rebote ofensivo que concedemos es el factor que <b>más correlaciona con el margen</b> de todos los que mide la planilla (<span class="n">r = −0.74</span>). Le damos 7.5 por partido cuando ganamos y 10.5 cuando perdemos, y esos tres rebotes extra se convierten en salidas a la línea de tres: en nuestros partidos, los rebotes de ataque del rival y sus triples intentados se mueven juntos (<span class="n">r = +0.38</span>).</p>
-  <p><b>La cadena, entonces, es una sola:</b> rebote largo que no cerramos → recuperación de la posesión → la defensa ya está rota → tiro abierto de afuera. Cerrar el rebote defensivo y bajarles los triples no son dos tareas.</p>
+  <p>El rebote ofensivo que concedemos sigue entre los factores que más correlacionan con el margen (<span class="n">r = −0.62</span>): 6.9 por partido cuando ganamos y 10.5 cuando perdemos. Contra Italiano les dejamos <b>2</b>, su peor noche de rebote de ataque del año, y ese fue el partido.</p>
+  <p><b>La cadena es una sola:</b> rebote largo que no cerramos → recuperan la posesión → la defensa ya está rota → tiro abierto de afuera. Cerrar el rebote defensivo y bajarles los triples no son dos tareas.</p>
 </section>
 
-<!-- ══════════════════════════════════════ -->
 <section class="blk" id="tiro">
-  <h2 class="h2">El tiro: el triple nos rinde más que el doble</h2>
-  <p>En FLEX pasa lo normal: el doble rinde más que el triple. <b>En Munro pasa al revés</b>, y somos uno de los pocos equipos donde eso ocurre.</p>
+  <h2 class="h2">El tiro: el dos está roto</h2>
+  <p>En FLEX pasa lo normal: el doble rinde más que el triple. <b>En Munro pasa al revés</b>, pero la brecha se achicó con los partidos nuevos — y el motivo no es que el triple mejore.</p>
 
   <div class="tira">
-    <div class="lab"><span class="nm">Puntos por intento de DOS</span><span class="v hi">0.786</span></div>
-    <svg viewBox="0 0 300 34" role="img" aria-label="Puntos por intento de dos: FLEX 0.840, Munro 0.786.">
+    <div class="lab"><span class="nm">Puntos por intento de DOS</span><span class="v hi">0.773</span></div>
+      <svg viewBox="0 0 300 34" role="img" aria-label="Puntos por intento de dos: FLEX 0.829, Munro 0.773.">
       <line x1="20" y1="17" x2="280" y2="17" stroke="rgba(237,242,238,.10)" stroke-width="1"/>
-      <line x1="170.8" y1="8" x2="170.8" y2="26" stroke="#8FA99F" stroke-width="1.4"/>
-      <text x="176.8" y="21" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">FLEX 0.840</text>
-      <rect x="137.2" y="11.5" width="11" height="11" fill="#E8C86A"/>
-      <text x="132.7" y="21" fill="#E8C86A" font-family="'IBM Plex Mono',monospace" font-size="9" text-anchor="end">MUNRO 0.786</text>
-    </svg>
+      <line x1="165.1" y1="8" x2="165.1" y2="26" stroke="#8FA99F" stroke-width="1.4"/>
+      <text x="171.1" y="21" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9">FLEX 0.829</text>
+      <rect x="130.5" y="11.5" width="11" height="11" fill="#E8C86A"/>
+      <text x="126.0" y="21" fill="#E8C86A" font-family="'IBM Plex Mono',monospace" font-size="9" text-anchor="end">MUNRO 0.773</text>
+      </svg>
   </div>
   <div class="tira">
-    <div class="lab"><span class="nm">Puntos por intento de TRES</span><span class="v hi">0.888</span></div>
-    <svg viewBox="0 0 300 34" role="img" aria-label="Puntos por intento de tres: FLEX 0.757, Munro 0.888.">
+    <div class="lab"><span class="nm">Puntos por intento de TRES</span><span class="v hi">0.849</span></div>
+      <svg viewBox="0 0 300 34" role="img" aria-label="Puntos por intento de tres: FLEX 0.742, Munro 0.849.">
       <line x1="20" y1="17" x2="280" y2="17" stroke="rgba(237,242,238,.10)" stroke-width="1"/>
-      <line x1="127.6" y1="8" x2="127.6" y2="26" stroke="#8FA99F" stroke-width="1.4"/>
-      <text x="121.6" y="21" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9" text-anchor="end">FLEX 0.757</text>
-      <rect x="190.3" y="11.5" width="11" height="11" fill="#E8C86A"/>
-      <text x="205.8" y="21" fill="#E8C86A" font-family="'IBM Plex Mono',monospace" font-size="9">MUNRO 0.888</text>
-    </svg>
+      <line x1="119.8" y1="8" x2="119.8" y2="26" stroke="#8FA99F" stroke-width="1.4"/>
+      <text x="113.8" y="21" fill="#8FA99F" font-family="'IBM Plex Mono',monospace" font-size="9" text-anchor="end">FLEX 0.742</text>
+      <rect x="170.0" y="11.5" width="11" height="11" fill="#E8C86A"/>
+      <text x="185.5" y="21" fill="#E8C86A" font-family="'IBM Plex Mono',monospace" font-size="9">MUNRO 0.849</text>
+      </svg>
     <div class="ft">misma escala en las dos tiras: 0.55 a 1.05 puntos por intento</div>
   </div>
 
-  <p>Y sin embargo <b>tiramos de afuera menos que la liga</b>: 40.0% de nuestros tiros son triples contra 41.3% de FLEX. Con esa brecha de 0.102 puntos por tiro, mover un 10% de los tiros del doble al triple valdría <b>+0.7 puntos por partido</b> a las tasas de hoy.</p>
-
-  <div class="warn"><span>⚠</span><span><b>Ojo con esa cuenta.</b> Es aritmética sobre lo que ya pasó, no un pronóstico: el triple que se agrega es peor que el triple promedio, y el doble que se saca es el peor de los dobles. Además <b>el doble genera faltas y el triple casi no</b>. Si a cada tiro le sumamos los libres que arrastra, repartidos en proporción al volumen, el doble sube a 0.943 y el triple a 1.046 —el triple sigue ganando—; pero en el supuesto extremo de que <b>todos</b> los libres salgan de tiros de dos, el doble pasa a 1.048 y gana él. El box score no puede decidir entre esos dos supuestos.</span></div>
-
-  <h3 class="h3">La conclusión honesta no es «tirar más de tres»</h3>
-  <p><b>Es que el doble está roto y hay que arreglarlo, no esquivarlo.</b> 39.3% de dos es 9º de 12. Tres indicios de la planilla apuntan todos al mismo lugar, y es el mismo: <b>nuestros dobles no salen del aro.</b></p>
-
-  <div class="tw">
-  <table>
-    <caption>Tres proxies de dónde sale el tiro de dos</caption>
-    <thead><tr><th scope="col">Indicio</th><th scope="col">Munro</th><th scope="col">FLEX</th><th scope="col"></th></tr></thead>
-    <tbody>
-      <tr><td>Libres intentados por tiro de dos</td><td class="lo">0.498</td><td>0.571</td><td class="lo">▼</td></tr>
-      <tr><td>Libres intentados por tiro de cancha</td><td class="lo">0.299</td><td>0.335</td><td class="lo">▼</td></tr>
-      <tr><td>Asistencias por canasta</td><td class="hi">0.526</td><td>0.444</td><td class="hi">▲</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <p>Somos <b>primeros de la liga en asistencias por canasta</b> y a la vez novenos en tiro de dos y novenos en llegar a la línea. Un equipo que genera el tiro con el pase y aun así no mete de adentro ni saca faltas está terminando la jugada <b>lejos del aro y sin contacto</b>: media distancia, bandejas contra el cuerpo, pases de más antes de entrar.</p>
-  <p class="ev">esto es una inferencia de tres proxies, no un dato: la planilla no registra de dónde sale el tiro</p>
-
-  <div class="note"><b>Entonces, ¿más de tres o más adentro?</b> Las dos, pero no para el mismo jugador. El mix del equipo ya está bien; <b>lo que está mal es quién tira qué</b>. Los perimetrales que hoy fuerzan dobles tienen que seguir hasta la línea, y los interiores que hoy salen a probar de afuera tienen que quedarse adentro. Abajo, quién es quién.</div>
-</section>
-
-<!-- ══════════════════════════════════════ -->
-<section class="blk" id="linea">
-  <h2 class="h2">La línea: 152 libres errados</h2>
-  <p>Es la ganancia más barata que tiene el equipo y es la que menos depende del rival.</p>
+  <p>El triple nos rinde <b>0.076 más por tiro</b> que el doble (antes eran 0.102). Pero mirado contra la liga el panorama es otro: nuestro triple está <b>0.107 arriba</b> del de FLEX y nuestro doble <b>0.056 abajo</b>. No es que el tres sea una mina de oro; es que el dos está roto.</p>
 
   <div class="big">
-    <div class="ft">52.6%</div>
-    <div class="eb">169 de 321 · 11º de 12 en FLEX · 9.5 libres errados por partido</div>
+    <div class="ft s">13º de 14</div>
+    <div class="eb">38.6% de dos · solo Florida Club mete menos · la mediana de la liga es 42.8%</div>
   </div>
 
+  <h3 class="h3">Tres indicios que apuntan al mismo lugar</h3>
   <div class="tw">
   <table>
-    <caption>Qué pasa si esos mismos 321 libres entran a otra tasa</caption>
-    <thead><tr><th scope="col">Si tiráramos</th><th scope="col">En la temporada</th><th scope="col">Por partido</th></tr></thead>
+    <caption>De dónde sale el tiro de dos · ponderado</caption>
+    <thead><tr><th scope="col">Indicio</th><th scope="col">Munro</th><th scope="col">FLEX</th><th scope="col"></th></tr></thead>
     <tbody>
-      <tr><td>55% (media FLEX)</td><td>+7 pts</td><td>+0.43</td></tr>
-      <tr><td>60%</td><td>+24 pts</td><td>+1.47</td></tr>
-      <tr><td>65%</td><td>+40 pts</td><td>+2.48</td></tr>
-      <tr><td>70%</td><td class="hi">+56 pts</td><td class="hi">+3.48</td></tr>
+      <tr><td>Libres intentados por tiro de dos</td><td class="lo">0.519</td><td>0.562</td><td class="lo">▼</td></tr>
+      <tr><td>Libres intentados por tiro de cancha</td><td class="lo">0.306</td><td>0.335</td><td class="lo">▼</td></tr>
+      <tr><td>Asistencias por canasta</td><td class="hi">0.503</td><td>0.445</td><td class="hi">▲</td></tr>
     </tbody>
   </table>
   </div>
+  <p>Estamos entre los que mejor mueven la pelota y a la vez 13º en meter de adentro y 11º en llegar a la línea. Un equipo que genera el tiro con el pase y aun así no mete de dos ni saca faltas está terminando la jugada <b>lejos del aro y sin contacto</b>: media distancia, bandejas contra el cuerpo, un pase de más antes de entrar.</p>
+  <p class="ev">esto es una inferencia de tres proxies, no un dato: la planilla no registra de dónde sale el tiro</p>
 
-  <p><b>Al 70%, dos de las seis derrotas se dan vuelta.</b> No es una proyección de qué habría pasado —el partido habría ido distinto— pero sí dice dónde estaban los puntos:</p>
+  <div class="warn"><span>⚠</span><span><b>Ojo con «entonces tiremos más de tres».</b> Contra los equipos de Fase 2 —los buenos— el triple rinde <b>0.750</b> y el doble <b>0.703</b>: los dos se caen y la brecha casi desaparece. Ahí ya tiramos 34 triples por partido, el 45% de nuestros tiros. <b>Contra los mejores, correr el mix no alcanza</b>: hay que arreglar el dos.</span></div>
+
+  <div class="note"><b>Entonces, ¿más de tres o más adentro?</b> Las dos, pero no para el mismo jugador. El mix del equipo (41.0% de triples) ya está en la media de la liga; <b>lo que está mal es quién tira qué</b>. Los perimetrales que hoy fuerzan dobles tienen que seguir hasta la línea, y los interiores que salen a probar de afuera tienen que quedarse adentro.</div>
+</section>
+
+<section class="blk" id="linea">
+  <h2 class="h2">La línea: el partido de Italiano probó la tesis</h2>
+  <p>La temporada va <b>187 de 344, 54.4%</b>, con 157 libres errados. Pero los dos partidos más ajustados de todo el año se explican enteros acá, y van en direcciones opuestas.</p>
 
   <div class="itg"><span class="mk">→</span><div>
-    <p>Banade <b>77 – 81</b>, en casa, en suplementario. <b>13 de 27 desde la línea.</b> Catorce libres errados en una derrota de cuatro.</p>
+    <p>Italiano <b>70 – 68</b>, de local, Fase 2. <b>18 de 23 desde la línea: 78.3%, la mejor noche del año (1 de 17).</b> A nuestro promedio de temporada habríamos metido 12 o 13 — y habríamos perdido.</p>
+    <p class="ev">ganamos el partido en el único rubro donde la temporada dice que somos flojos</p>
+  </div></div>
+  <div class="itg"><span class="mk">→</span><div>
+    <p>Banade <b>77 – 81</b>, de local, en suplementario. <b>13 de 27: 48.1%.</b> Catorce libres errados en una derrota de cuatro.</p>
     <p class="ev">al 70% de la línea: 83 – 81</p>
   </div></div>
   <div class="itg"><span class="mk">→</span><div>
-    <p>Villa Adelina <b>65 – 67</b>, en casa. <b>8 de 16.</b> Y con el mejor eFG de toda nuestra temporada (0.528).</p>
+    <p>Villa Adelina <b>65 – 67</b>, de local. <b>8 de 16</b>, y con el mejor eFG de toda nuestra temporada (0.528).</p>
     <p class="ev">al 70% de la línea: 68 – 67</p>
   </div></div>
-  <div class="itg"><span class="mk">→</span><div>
-    <p>CEPA B <b>59 – 63</b>, en casa. <b>7 de 15.</b> Esta no alcanza a darse vuelta: 62 – 63.</p>
-    <p class="ev">la peor noche de tiro del año igual pesa más que la línea</p>
-  </div></div>
+
+  <h3 class="h3">¿Mejoramos, o fue una noche?</h3>
+  <p>En Fase 2 tiramos <b>61.9%</b> y en Fase 1 <b>51.4%</b>. Tienta leerlo como que el problema se arregló. <b>No alcanza:</b> con 97 intentos de un lado y 247 del otro, la diferencia da <span class="n">z = +1.75</span>, por debajo del umbral. Es una señal alentadora, no un hecho.</p>
 
   <div class="tw">
   <table>
-    <caption>Libres, jugador por jugador · ordenado por libres errados</caption>
-    <thead><tr><th scope="col">Jugador</th><th scope="col">TL</th><th scope="col">%</th><th scope="col">Errados</th><th scope="col">TL/p</th></tr></thead>
+    <caption>Qué pasa si esos mismos 344 libres entran a otra tasa</caption>
+    <thead><tr><th scope="col">Si tiráramos</th><th scope="col">En la temporada</th><th scope="col">Por partido</th></tr></thead>
     <tbody>
-      <tr><td>D'Alesio, Alejo</td><td>26/47</td><td>55.3%</td><td>21</td><td>3.6</td></tr>
-      <tr><td>Di Cosmo, Ramiro</td><td>20/40</td><td>50.0%</td><td>20</td><td>3.1</td></tr>
-      <tr><td>Fernández, Silvio</td><td>4/24</td><td class="lo">16.7%</td><td>20</td><td>2.0</td></tr>
-      <tr><td>Mendizábal, Sebastián</td><td>23/38</td><td>60.5%</td><td>15</td><td>3.2</td></tr>
-      <tr><td>Arambarri, Leandro</td><td>10/24</td><td>41.7%</td><td>14</td><td>3.0</td></tr>
-      <tr><td>Mayorca, Lucas</td><td>10/24</td><td>41.7%</td><td>14</td><td>2.4</td></tr>
-      <tr><td>Chaves, Juan Pablo</td><td>23/34</td><td class="hi">67.6%</td><td>11</td><td>2.4</td></tr>
-      <tr><td>Galinetti, Gustavo</td><td>28/38</td><td class="hi">73.7%</td><td>10</td><td>3.2</td></tr>
-      <tr><td>Masi, Rodrigo</td><td>7/16</td><td>43.8%</td><td>9</td><td>1.3</td></tr>
-      <tr><td>Vásquez, Fernando</td><td>5/14</td><td>35.7%</td><td>9</td><td>1.2</td></tr>
-      <tr><td>Pérez Williams, Manuel</td><td>8/14</td><td>57.1%</td><td>6</td><td>1.3</td></tr>
-      <tr><td>García, Pablo</td><td>5/8</td><td>62.5%</td><td>3</td><td>0.5</td></tr>
+      <tr><td>56% (mediana FLEX)</td><td>+6 pts</td><td>+0.34</td></tr>
+      <tr><td>62% (lo de Fase 2)</td><td>+26 pts</td><td>+1.52</td></tr>
+      <tr><td>70%</td><td class="hi">+54 pts</td><td class="hi">+3.19</td></tr>
     </tbody>
   </table>
   </div>
 
-  <p>Solo dos jugadores del plantel superan el 65%. <b>Fernández con 4 de 24 es el caso urgente</b>: es un interior al que van a seguir haciéndole falta, y hoy mandarlo a la línea es una jugada favorable para el rival. Los cuatro de arriba —D'Alesio, Di Cosmo, Fernández, Mendizábal— concentran <b>76 de los 152 libres errados</b>: la mitad del problema está en cuatro personas.</p>
+  <div class="tw">
+  <table>
+    <caption>Libres por jugador · ordenado por libres errados</caption>
+    <thead><tr><th scope="col">Jugador</th><th scope="col">TL</th><th scope="col">%</th><th scope="col">Errados</th></tr></thead>
+    <tbody>
+      <tr><td>D'Alesio, Alejo</td><td>29/52</td><td>55.8%</td><td class="lo">23</td></tr>
+      <tr><td>Di Cosmo, Ramiro</td><td>20/40</td><td>50.0%</td><td class="lo">20</td></tr>
+      <tr><td>Fernández, Silvio</td><td>4/24</td><td class="lo">16.7%</td><td class="lo">20</td></tr>
+      <tr><td>Mendizábal, Sebastián</td><td>23/38</td><td>60.5%</td><td>15</td></tr>
+      <tr><td>Mayorca, Lucas</td><td>13/28</td><td>46.4%</td><td>15</td></tr>
+      <tr><td>Arambarri, Leandro</td><td>10/24</td><td>41.7%</td><td>14</td></tr>
+      <tr><td>Chaves, Juan Pablo</td><td>24/35</td><td class="hi">68.6%</td><td>11</td></tr>
+      <tr><td>Galinetti, Gustavo</td><td>35/46</td><td class="hi">76.1%</td><td>11</td></tr>
+      <tr><td>Masi, Rodrigo</td><td>10/20</td><td>50.0%</td><td>10</td></tr>
+      <tr><td>Vásquez, Fernando</td><td>5/14</td><td>35.7%</td><td>9</td></tr>
+      <tr><td>Pérez Williams, Manuel</td><td>8/14</td><td>57.1%</td><td>6</td></tr>
+      <tr><td>García, Pablo</td><td>5/8</td><td>62.5%</td><td>3</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p><b>Galinetti es ahora el mejor de la línea del plantel</b> (76.1% sobre 46 intentos) y el que más va: es a quien conviene que le hagan falta al final. En el otro extremo, <b>Fernández con 4 de 24</b> sigue siendo el caso urgente. Los cuatro primeros concentran <b>78 de los 157 libres errados</b>.</p>
 </section>
 
-<!-- ══════════════════════════════════════ -->
-<section class="blk" id="pelota">
-  <h2 class="h2">La pelota y las faltas</h2>
-  <p>Cuidamos bien la pelota en general —18.2%, 4º de 12— pero el desvío entre ganar y perder es enorme, y en las derrotas <b>se da vuelta el diferencial completo</b>.</p>
+<section class="blk" id="fase2">
+  <h2 class="h2">Fase 2: lo que ya está funcionando</h2>
+  <p>Cuatro partidos contra los que ganaron su zona, <b>cuatro victorias, primeros</b>. Y el perfil con el que se ganaron es casi una caricatura del resto del reporte.</p>
 
   <div class="tw">
   <table>
-    <caption>Pérdidas y faltas · por partido</caption>
-    <thead><tr><th scope="col"></th><th scope="col">En G</th><th scope="col">En P</th></tr></thead>
+    <caption>Munro en Fase 2 (4 partidos) contra Fase 1 (13)</caption>
+    <thead><tr><th scope="col"></th><th scope="col">Fase 2</th><th scope="col">Fase 1</th></tr></thead>
     <tbody>
-      <tr><td>Nuestras pérdidas por posesión</td><td class="hi">15.9%</td><td class="lo">21.9%</td></tr>
-      <tr><td>Las de ellos</td><td class="hi">21.3%</td><td class="lo">16.0%</td></tr>
-      <tr><td>Recuperos nuestros</td><td class="hi">10.4</td><td class="lo">7.2</td></tr>
-      <tr><td>Faltas nuestras</td><td class="hi">18.9</td><td class="lo">23.3</td></tr>
-      <tr><td>Libres que tiran ellos</td><td class="hi">21.7</td><td class="lo">25.7</td></tr>
+      <tr><td>Récord</td><td class="hi">4 – 0</td><td>7 – 6</td></tr>
+      <tr><td>eFG</td><td class="lo">0.362</td><td>0.431</td></tr>
+      <tr><td>Tiro de dos</td><td class="lo">35.2%</td><td>40.8%</td></tr>
+      <tr><td>Triple</td><td class="lo">25.0%</td><td>31.1%</td></tr>
+      <tr><td>Rebote defensivo</td><td class="hi">0.830</td><td>0.778</td></tr>
+      <tr><td>Pérdidas por posesión</td><td class="hi">0.143</td><td>0.191</td></tr>
+      <tr><td>Tiro libre</td><td class="hi">61.9%</td><td>51.4%</td></tr>
+      <tr><td>Reb. de ataque del rival</td><td class="hi">6.8</td><td>8.7</td></tr>
     </tbody>
   </table>
   </div>
 
-  <p>El diferencial de pérdidas correlaciona con el margen casi tanto como el triple (<span class="n">r = +0.73</span>). El caso extremo fue Victoria C de visitante: <b>28 pérdidas, 33.2% de las posesiones</b>, y un 62 – 92.</p>
+  <p>Contra los mejores <b>tiramos peor que nunca y ganamos los cuatro</b>. El eFG de 0.362 sería el peor de la liga sostenido en el año; lo que lo compensa es exactamente lo de la tesis: rebote, pelota y línea. Es la prueba de que el equipo tiene un camino para ganar sin depender de que entre.</p>
+
+  <h3 class="h3">La rotación ya se corrió sola</h3>
+  <p>Y sin que nadie mirara estos números, los minutos de Fase 2 se movieron en la dirección que el reporte pide.</p>
 
   <div class="tw">
   <table>
-    <caption>Pérdidas y asistencias por 40 minutos · rotación de 100+ minutos</caption>
-    <thead><tr><th scope="col">Jugador</th><th scope="col">Per/40</th><th scope="col">Ast/40</th><th scope="col">Ast/Per</th></tr></thead>
+    <caption>Minutos por partido · Fase 2 contra Fase 1</caption>
+    <thead><tr><th scope="col">Jugador</th><th scope="col">Fase 2</th><th scope="col">Fase 1</th><th scope="col">Δ</th></tr></thead>
     <tbody>
-      <tr><td>Mendizábal, Sebastián</td><td class="lo">5.40</td><td>4.67</td><td class="lo">0.86</td></tr>
-      <tr><td>D'Alesio, Alejo</td><td class="lo">4.92</td><td>2.54</td><td class="lo">0.52</td></tr>
-      <tr><td>Chaves, Juan Pablo</td><td class="lo">4.55</td><td>2.60</td><td class="lo">0.57</td></tr>
-      <tr><td>Galinetti, Gustavo</td><td>2.83</td><td>2.70</td><td>0.95</td></tr>
-      <tr><td>Masi, Rodrigo</td><td>2.83</td><td>2.00</td><td>0.71</td></tr>
-      <tr><td>Di Cosmo, Ramiro</td><td>2.58</td><td>3.51</td><td class="hi">1.36</td></tr>
-      <tr><td>Fernández, Silvio</td><td>2.22</td><td>1.37</td><td>0.62</td></tr>
-      <tr><td>Vásquez, Fernando</td><td>2.19</td><td>1.82</td><td>0.83</td></tr>
-      <tr><td>Zajac, José</td><td class="hi">1.48</td><td>2.21</td><td class="hi">1.50</td></tr>
-      <tr><td>Mayorca, Lucas</td><td class="hi">1.32</td><td>2.64</td><td class="hi">2.00</td></tr>
-      <tr><td>Pérez Williams, Manuel</td><td class="hi">0.65</td><td>1.63</td><td class="hi">2.50</td></tr>
+      <tr><td>Zajac, José</td><td class="hi">28.5′</td><td>15.1′</td><td class="hi">+13.5</td></tr>
+      <tr><td>Di Cosmo, Ramiro</td><td>36.3′</td><td>28.6′</td><td class="hi">+7.7</td></tr>
+      <tr><td>Mayorca, Lucas</td><td>23.1′</td><td>16.6′</td><td class="hi">+6.5</td></tr>
+      <tr><td>Chaves, Juan Pablo</td><td>26.7′</td><td>20.3′</td><td class="hi">+6.3</td></tr>
+      <tr><td>Galinetti, Gustavo</td><td>29.0′</td><td>22.8′</td><td class="hi">+6.2</td></tr>
+      <tr><td>D'Alesio, Alejo</td><td>18.6′</td><td>21.8′</td><td class="lo">−3.2</td></tr>
+      <tr><td>Mendizábal, Sebastián</td><td>15.1′</td><td>23.2′</td><td class="lo">−8.1</td></tr>
+      <tr><td>Vásquez, Fernando</td><td>11.8′</td><td>20.4′</td><td class="lo">−8.6</td></tr>
     </tbody>
   </table>
   </div>
 
-  <h3 class="h3">Las faltas de local</h3>
-  <p>Cometemos <b>22.5 faltas cada 40 minutos de local y 17.6 de visitante.</b> La liga entera comete 19.8 de local y 18.9 de visitante, así que el patrón normal es plano y el nuestro no: somos <b>+2.7 sobre la norma local</b> y −1.3 bajo la de visitante. Y el récord acompaña: <b>4–4 en casa, 6–2 afuera.</b></p>
-  <p class="ev">con 8 partidos por sede esto es una señal débil; vale mirarlo, no concluirlo</p>
+  <p><b>Zajac es el que más sube y es el más eficiente del plantel.</b> Los tres que bajan son tres de los cuatro peores en puntos por tiro. No hace falta cambiar nada: hace falta <b>no volver atrás</b> cuando vuelva el calendario fácil.</p>
+  <p class="ev">cuatro partidos por lado: es una tendencia de rotación, no una muestra que pruebe nada por sí sola</p>
 </section>
 
-<!-- ══════════════════════════════════════ -->
 <section class="blk" id="jugadores">
   <h2 class="h2">Los jugadores: quién debería tirar qué</h2>
-  <p>Puntos por intento de cada uno, desde cada distancia. La columna del veredicto compara las dos y marca solo cuando la diferencia pasa de 0.15 puntos por tiro <b>y</b> hay al menos 10 intentos de cada lado.</p>
+  <p>Puntos por intento desde cada distancia. El veredicto compara las dos y marca cuando la brecha pasa de 0.15 puntos por tiro <b>y</b> hay al menos 10 intentos de cada lado.</p>
 
   <div class="tw">
   <table>
-    <caption>Temporada completa · ordenado por minutos</caption>
+    <caption>Temporada completa, totales reales sin ponderar · ordenado por minutos</caption>
     <thead><tr><th scope="col">Jugador</th><th scope="col">De dos</th><th scope="col">pp2</th><th scope="col">De tres</th><th scope="col">pp3</th><th scope="col">Veredicto</th></tr></thead>
     <tbody>
-      <tr><td>Di Cosmo, Ramiro</td><td>24/72</td><td>0.667</td><td>29/91</td><td class="hi">0.956</td><td class="hi">más de afuera</td></tr>
-      <tr><td>Chaves, Juan Pablo</td><td>42/75</td><td class="hi">1.120</td><td>12/48</td><td>0.750</td><td class="hi">más adentro</td></tr>
-      <tr><td>Galinetti, Gustavo</td><td>41/89</td><td class="hi">0.921</td><td>0/5</td><td>—</td><td class="dim">ya está adentro</td></tr>
-      <tr><td>Mendizábal, Sebastián</td><td>7/35</td><td class="lo">0.400</td><td>8/35</td><td>0.686</td><td class="hi">más de afuera</td></tr>
-      <tr><td>D'Alesio, Alejo</td><td>19/67</td><td class="lo">0.567</td><td>3/18</td><td class="lo">0.500</td><td class="dim">equilibrado y bajo</td></tr>
-      <tr><td>Pérez Williams, Manuel</td><td>17/48</td><td>0.708</td><td>16/46</td><td class="hi">1.043</td><td class="hi">más de afuera</td></tr>
-      <tr><td>Masi, Rodrigo</td><td>16/31</td><td class="hi">1.032</td><td>12/43</td><td>0.837</td><td class="hi">más adentro</td></tr>
+      <tr><td>Di Cosmo, Ramiro</td><td>24/72</td><td class="lo">0.667</td><td>29/91</td><td class="hi">0.956</td><td class="hi">más de afuera</td></tr>
+      <tr><td>Chaves, Juan Pablo</td><td>45/80</td><td class="hi">1.125</td><td>12/49</td><td>0.735</td><td class="hi">más adentro</td></tr>
+      <tr><td>Galinetti, Gustavo</td><td>44/96</td><td class="hi">0.917</td><td>0/5</td><td>—</td><td class="dim">ya está adentro</td></tr>
+      <tr><td>Masi, Rodrigo</td><td>21/40</td><td class="hi">1.050</td><td>12/47</td><td>0.766</td><td class="hi">más adentro</td></tr>
+      <tr><td>Pérez Williams, Manuel</td><td>18/50</td><td>0.720</td><td>17/49</td><td class="hi">1.041</td><td class="hi">más de afuera</td></tr>
+      <tr><td>Mendizábal, Sebastián</td><td>7/35</td><td class="lo">0.400</td><td>8/36</td><td>0.667</td><td class="hi">más de afuera</td></tr>
+      <tr><td>D'Alesio, Alejo</td><td>23/73</td><td class="lo">0.630</td><td>3/18</td><td class="lo">0.500</td><td class="dim">equilibrado y bajo</td></tr>
+      <tr><td>Zajac, José</td><td>1/8</td><td>0.250</td><td>32/75</td><td class="hi">1.280</td><td class="hi">que tire más</td></tr>
+      <tr><td>Mayorca, Lucas</td><td>15/53</td><td class="lo">0.566</td><td>16/50</td><td class="hi">0.960</td><td class="hi">más de afuera</td></tr>
       <tr><td>Fernández, Silvio</td><td>21/49</td><td>0.857</td><td>0/3</td><td>—</td><td class="dim">ya está adentro</td></tr>
-      <tr><td>Vásquez, Fernando</td><td>6/26</td><td class="lo">0.462</td><td>1/19</td><td class="lo">0.158</td><td class="lo">no es su rol</td></tr>
-      <tr><td>Zajac, José</td><td>1/8</td><td>0.250</td><td>27/63</td><td class="hi">1.286</td><td class="hi">que tire más</td></tr>
-      <tr><td>Mayorca, Lucas</td><td>15/46</td><td>0.652</td><td>16/48</td><td class="hi">1.000</td><td class="hi">más de afuera</td></tr>
       <tr><td>Arambarri, Leandro</td><td>24/50</td><td class="hi">0.960</td><td>1/2</td><td>—</td><td class="dim">ya está adentro</td></tr>
-      <tr><td>García, Pablo</td><td>10/25</td><td>0.800</td><td>2/8</td><td>0.750</td><td class="dim">muestra corta</td></tr>
+      <tr><td>Vásquez, Fernando</td><td>7/29</td><td class="lo">0.483</td><td>1/20</td><td class="lo">0.150</td><td class="lo">no es su rol</td></tr>
+      <tr><td>García, Pablo</td><td>10/26</td><td>0.769</td><td>2/9</td><td>0.667</td><td class="dim">muestra corta</td></tr>
     </tbody>
   </table>
   </div>
-
-  <p class="ev">pp2 y pp3 = puntos por intento, sin contar los libres que arrastra cada tiro</p>
+  <p class="ev">pp2 y pp3 = puntos por intento, sin contar los libres que arrastra cada tiro · los números de jugador no se ponderan, igual que en liga.py</p>
 
   <div class="it">
-    <div class="nm">Zajac es el tirador más eficiente del plantel y el que menos carga lleva</div>
-    <p><b>1.286 puntos por triple, 42.9% de afuera, TS 0.585 — el mejor del equipo por lejos.</b> Y sin embargo tiene el uso más bajo de la rotación (0.194) y 18.1 minutos. El 89% de sus tiros son triples: no hay que pedirle otra cosa, hay que <b>darle más posesiones y más pantallas</b>.</p>
-    <p class="ev">63 triples en 12 partidos · 5.3 por partido · pérdidas 1.48 por 40</p>
+    <div class="nm">Zajac es el tirador más eficiente del plantel y Fase 2 ya lo encontró</div>
+    <p><b>1.280 puntos por triple, 42.7% de afuera, TS 0.593 — el mejor del equipo por lejos.</b> El 90% de sus tiros son triples: no hay que pedirle otra cosa. En Fase 2 pasó de 15.1′ a 28.5′ y de 5.7 a 12.0 puntos. <b>Ese es el ajuste, y ya está hecho.</b></p>
+    <p class="ev">75 triples en 13 partidos · 1.92 pérdidas por 40</p>
   </div>
   <div class="it">
-    <div class="nm">Di Cosmo carga el ataque y lo hace desde el lugar equivocado</div>
-    <p>Es el de más minutos (29.8) y más tiros (163, el 15.2% del equipo). Su triple rinde <b>0.956</b> y su doble <b>0.667</b>: la brecha más grande del plantel. Setenta y dos intentos de dos al 33.3% son el agujero individual más caro que tenemos. En las derrotas sube a 34.8 minutos y 14 puntos con <b>peor</b> TS: cuando el partido se pone feo, la pelota va a él y se fuerza.</p>
-    <p class="ev">+90 de diferencia en 387 minutos, el mejor del equipo en bruto</p>
+    <div class="nm">Di Cosmo carga el ataque desde el lugar equivocado</div>
+    <p>El de más minutos (29.8) y más tiros (163, el 15% del equipo). Su triple rinde <b>0.956</b> y su doble <b>0.667</b>: la brecha más grande del plantel con volumen. Setenta y dos intentos de dos al 33.3% son el agujero individual más caro que tenemos. Y en las derrotas sube a 34.8 minutos y 14 puntos con <b>peor</b> TS: cuando el partido se pone feo, la pelota va a él y se fuerza.</p>
+    <p class="ev">+90 de diferencia en 387 minutos, el mejor del equipo en bruto · no jugó contra Italiano</p>
   </div>
   <div class="it">
     <div class="nm">Chaves y Masi tiran de afuera y no deberían</div>
-    <p>Chaves mete <b>56.0% de dos</b> —el mejor del plantel con volumen— y tira 48 triples al 25%. Masi mete <b>51.6% de dos</b> y el 58% de sus tiros son triples, al 27.9%. Entre los dos son <b>91 triples</b> que valen menos que sus propios dobles. Ahí hay puntos sin tocar el sistema: solo cambiando quién toma qué tiro.</p>
+    <p>Chaves mete <b>56.3% de dos</b> —el mejor del plantel con volumen, y mejoró con los partidos nuevos— y tira 49 triples al 24.5%. Masi mete <b>52.5% de dos</b> y el 54% de sus tiros son de afuera, al 25.5%. Entre los dos son <b>96 triples</b> que valen menos que sus propios dobles. Ahí hay puntos sin tocar el sistema.</p>
   </div>
   <div class="it">
-    <div class="nm">Vásquez: 45 tiros a 0.391 puntos por tiro</div>
-    <p>Es el número más duro de la planilla. <b>1 de 19 de tres, 6 de 26 de dos, TS 0.195</b> en 18.3 minutos por partido. No es una crítica al jugador —hace 3.2 rebotes y 1.8 asistencias por partido— es que hoy <b>su rol no puede incluir tirar</b>. Cada tiro suyo cuesta medio punto contra el promedio del equipo.</p>
+    <div class="nm">Vásquez: 49 tiros a 0.199 de TS</div>
+    <p>Sigue siendo el número más duro de la planilla. <b>1 de 20 de tres, 7 de 29 de dos.</b> No es una crítica al jugador —rebotea y mueve la pelota, y ast/per 0.83 es decente— es que hoy <b>su rol no puede incluir tirar</b>. En Fase 2 ya bajó a 11.8 minutos.</p>
   </div>
   <div class="it">
-    <div class="nm">Mendizábal es el conductor y es la fuga</div>
-    <p>4.67 asistencias por 40 —de las mejores— pero <b>5.40 pérdidas por 40</b> y un ast/per de 0.86, el segundo peor de la rotación. Y 7 de 35 de dos (20.0%). Conduce bien y termina mal: la instrucción es <b>que entregue, no que defina</b>.</p>
+    <div class="nm">Mendizábal conduce bien y termina mal</div>
+    <p>4.62 asistencias por 40 —las mejores del equipo— pero <b>5.34 pérdidas por 40</b> y ast/per 0.86. Y 7 de 35 de dos (20.0%). La instrucción es <b>que entregue, no que defina</b>. En Fase 2 bajó 8 minutos.</p>
   </div>
   <div class="it">
-    <div class="nm">El quinteto de final de partido se puede leer de la planilla</div>
-    <p>Tres de nuestras seis derrotas fueron por cuatro puntos o menos y jugamos <b>tres suplementarios en 16 partidos</b> (la liga tuvo cinco en noventa). Para los últimos dos minutos, los que combinan línea aceptable, pocas pérdidas y tiro: <b>Galinetti</b> (73.7% de línea), <b>Chaves</b> (67.6%), <b>Pérez Williams</b> (0.65 pérdidas por 40) y <b>Zajac</b> (1.48 pérdidas, 1.286 por triple). Los cuatro de peor línea suman 2.4 libres por partido cada uno: si están en cancha, hay que sacarlos del rol de recibir la falta.</p>
+    <div class="nm">El quinteto de los últimos dos minutos sale de la planilla</div>
+    <p><b>Once de nuestros diecisiete partidos se decidieron por ocho puntos o menos</b> (7–4) y jugamos <b>tres suplementarios</b> — la liga tuvo seis en 132 partidos. Para el final, los que combinan línea, pocas pérdidas y tiro: <b>Galinetti</b> (76.1% de línea), <b>Chaves</b> (68.6%, 1.125 por doble), <b>Pérez Williams</b> (0.60 pérdidas por 40, 1.041 por triple) y <b>Zajac</b> (1.280 por triple). Si están en cancha los de línea floja, hay que sacarlos del rol de recibir la falta.</p>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════ -->
 <section class="blk" id="plan">
   <h2 class="h2">Qué entrenar, por orden de rendimiento</h2>
   <p>Ordenado por puntos que devuelve dividido por lo que cuesta conseguirlos. Los tres primeros no piden sistema nuevo.</p>
 
   <div class="itg"><span class="mk">1</span><div>
-    <p><b>La línea, todos los días, con cansancio y con marcador.</b> 152 libres errados; al 70% son 56 puntos en la temporada y dos derrotas dadas vuelta. Series de 2 con consecuencia física, nunca en frío al empezar. Prioridad individual: Fernández, D'Alesio, Di Cosmo, Mendizábal — entre los cuatro, la mitad de lo perdido.</p>
-    <p class="ev">devuelve +3.5 puntos por partido · no depende del rival · no depende de nadie más</p>
+    <p><b>Terminar adentro con contacto.</b> Subió al primer puesto: 38.6% de dos es 13º de 14 y es el eje donde más lejos estamos de la liga. Entrenar la terminación con contacto —almohadón, dos pasos, mano débil, bandeja contra el cuerpo— y <b>buscar la falta, no evitarla</b>. Somos 11º en llegar a la línea: la mitad de la solución del tiro de dos está en la línea, no en el tiro.</p>
+    <p class="ev">llegar a la mediana de la liga (42.8%) vale unos 4 puntos por partido sobre el volumen actual de dobles</p>
   </div></div>
 
   <div class="itg"><span class="mk">2</span><div>
-    <p><b>Cierre de rebote defensivo: bloquear y sacar, con el tiro de afuera del rival como disparador.</b> Es el factor que más correlaciona con el margen de todo lo que mide la planilla. El rebote largo del triple errado es el que se nos escapa, y es el que arma su siguiente triple. Ejercicio: tiro de tres desde el ala, cinco contra cinco, la posesión no termina hasta que la naranja es nuestra y salió del medio.</p>
-    <p class="ev">r = −0.74 con el margen · 7.5 rebotes de ataque concedidos cuando ganamos, 10.5 cuando perdemos</p>
+    <p><b>Cierre de rebote defensivo: bloquear y sacar, con el tiro de afuera del rival como disparador.</b> Es el factor que más correlaciona con el margen después del rating. El rebote largo del triple errado es el que se nos escapa, y es el que arma su siguiente triple. Ejercicio: tiro de tres desde el ala, cinco contra cinco, la posesión no termina hasta que la naranja salió del medio.</p>
+    <p class="ev">r = −0.62 con el margen · 6.9 rebotes de ataque concedidos ganando, 10.5 perdiendo · contra Italiano, 2</p>
   </div></div>
 
   <div class="itg"><span class="mk">3</span><div>
-    <p><b>Repartir el tiro: cada uno desde donde le rinde.</b> No es tirar más ni menos — es que Chaves y Masi dejen de salir a la línea y que Di Cosmo, Pérez Williams, Zajac y Mayorca dejen de forzar el doble. En los ejercicios de tiro, cada jugador practica <b>su</b> reparto, no el mismo para todos. Zajac con más volumen: hoy tira 5.3 triples por partido y es el más eficiente del plantel.</p>
-    <p class="ev">reacomodar el 10% de los tiros vale +0.7 por partido a las tasas actuales</p>
+    <p><b>La línea, todos los días, con cansancio y con marcador.</b> 157 libres errados. El 61.9% de Fase 2 todavía no prueba que mejoramos (z = +1.75): hay que sostenerlo. Series de 2 con consecuencia física, nunca en frío al empezar. Prioridad: Fernández, D'Alesio, Di Cosmo, Mendizábal — entre los cuatro, la mitad de lo perdido.</p>
+    <p class="ev">al 70% son +54 puntos en la temporada, +3.2 por partido</p>
   </div></div>
 
   <div class="itg"><span class="mk">4</span><div>
-    <p><b>Terminar adentro con contacto.</b> 39.3% de dos siendo primeros de la liga en asistencias por canasta significa que el pase llega y el tiro sale mal o lejos. Entrenar la terminación con contacto —almohadón, dos pasos, mano débil, bandeja contra el cuerpo— y buscar la falta, no evitarla. Somos 9º en llegar a la línea: la mitad de la solución del tiro de dos <b>está en la línea</b>, no en el tiro.</p>
-    <p class="ev">0.498 libres por tiro de dos contra 0.571 de FLEX</p>
+    <p><b>Repartir el tiro: cada uno desde donde le rinde.</b> No es tirar más ni menos — el mix del equipo ya está en la media. Es que Chaves y Masi dejen de salir a la línea, y que Di Cosmo, Pérez Williams, Zajac y Mayorca dejen de forzar el doble. En los ejercicios de tiro, cada uno practica <b>su</b> reparto. Y sostener los minutos de Zajac.</p>
   </div></div>
 
   <div class="itg"><span class="mk">5</span><div>
-    <p><b>Salida de presión, con cinco atacantes que puedan recibir.</b> 15.9% de pérdidas cuando ganamos, 21.9% cuando perdemos; 28 pérdidas en el 62 – 92. Los que pierden la pelota son los que conducen: el trabajo es de <b>segunda línea de pase</b> —que el que viene detrás se ofrezca— más que de manejo. Ejercicio con reloj corto y dos que presionan arriba.</p>
+    <p><b>Salida de presión, con cinco que puedan recibir.</b> 15.2% de pérdidas ganando, 21.9% perdiendo; 28 pérdidas en el 62 – 92. Los que pierden la pelota son los que conducen: el trabajo es de <b>segunda línea de pase</b> —que el que viene detrás se ofrezca— más que de manejo. Reloj corto y dos presionando arriba.</p>
     <p class="ev">el diferencial de pérdidas correlaciona +0.73 con el margen</p>
   </div></div>
 
   <div class="itg"><span class="mk">6</span><div>
-    <p><b>Achicar sin hacer falta, de local.</b> 22.5 faltas cada 40 en casa contra 19.8 de la liga; 25.7 libres del rival por partido en las derrotas. Defensa de pies y no de manos en las repeticiones de ayuda. Señal débil por muestra, pero el costo es visible: cuatro libres extra por derrota.</p>
+    <p><b>Achicar sin hacer falta, de local.</b> 22.6 faltas cada 40 en casa contra 19.5 de la liga; de visitante 17.6 contra 18.9. Y el récord acompaña: <b>5–4 en casa, 6–2 afuera.</b> Defensa de pies y no de manos en las repeticiones de ayuda.</p>
+    <p class="ev">nueve partidos por sede: señal débil, vale mirarla y no concluirla</p>
   </div></div>
 
-  <div class="note"><b>La consigna de partido, en dos frases.</b> Defensivamente: <b>los mandamos afuera y les cerramos el rebote</b> — el número a mirar en el banco es cuántos triples llevan intentados; pasados los 28 estamos 2–6. Ofensivamente: <b>la pelota llega sola —somos los que mejor la mueven— así que la única regla es que la tire el que la tiene que tirar, y que el que entra, entre buscando el contacto.</b></div>
+  <div class="note"><b>La consigna de partido, en dos frases.</b> Defensivamente: <b>los mandamos afuera y les cerramos el rebote</b> — el número a mirar en el banco es cuántos triples llevan intentados; pasados los 28, el partido se va a la última pelota. Ofensivamente: <b>la pelota llega sola, así que la única regla es que la tire el que la tiene que tirar, y que el que entra, entre buscando el contacto.</b></div>
 </section>
 
-<!-- ══════════════════════════════════════ -->
 <section class="blk" id="limites">
   <h2 class="h2">Lo que esto no puede decir</h2>
   <p>La planilla CABB es un box score: totales al final del partido. Todo lo de arriba sale de ahí y nada se infiere de lo que no está.</p>
-  <div class="itg"><span class="mk">·</span><div><p><b>No hay quintetos.</b> El ±  de cada jugador está en la planilla, pero no quién estaba en cancha con quién. Nada de lo de arriba es un análisis de combinaciones.</p></div></div>
+  <div class="itg"><span class="mk">·</span><div><p><b>Los promedios están ponderados.</b> Un partido de Fase 2 vale 2 y uno de Fase 1 vale 1, así que 17 partidos suman 21 de peso. <b>El récord, los puestos y las cuentas de partidos no se ponderan</b>: «11–6» y «8–0 bajo 28 triples» son cuenta real. Los números de jugador tampoco.</p></div></div>
+  <div class="itg"><span class="mk">·</span><div><p><b>No hay quintetos.</b> El ± de cada jugador está en la planilla, pero no quién estaba en cancha con quién.</p></div></div>
   <div class="itg"><span class="mk">·</span><div><p><b>No hay parciales por cuarto ni rachas.</b> «Se nos cae el tercero» no se puede verificar con esta data.</p></div></div>
   <div class="itg"><span class="mk">·</span><div><p><b>No hay mapa de tiro ni tipo de jugada.</b> Que los dobles no salgan del aro es una inferencia de tres proxies, no una medición. Y ninguna frase de arriba dice de qué jugada salió un tiro del rival.</p></div></div>
-  <div class="itg"><span class="mk">·</span><div><p><b>No hay fecha en la planilla.</b> El orden de la temporada se reconstruyó con los nombres de hoja («Fecha 2» a «Fecha 6»), el PDF de Banade que fija la fecha 7 y la estructura de la zona. Por eso no hay ningún gráfico de tendencia acá.</p></div></div>
-  <div class="itg"><span class="mk">·</span><div><p><b>Seis derrotas son seis partidos.</b> Los cortes fuertes de este reporte —el 8–0 bajo 28 triples, los splits de victoria y derrota— tienen la muestra que tienen. Los que sí resisten volumen están marcados con su z o su r.</p></div></div>
+  <div class="itg"><span class="mk">·</span><div><p><b>No hay fecha en la planilla.</b> Por eso el peso es por fase y no por recencia: el número del nombre de archivo es la hora de descarga, y ordenar por él pondría los partidos más nuevos en el medio de la lista. No hay ningún gráfico de tendencia acá.</p></div></div>
+  <div class="itg"><span class="mk">·</span><div><p><b>Seis derrotas son seis partidos, y Fase 2 son cuatro.</b> Los cortes fuertes —el 8–0 bajo 28 triples, los splits de victoria y derrota, el 4–0— tienen la muestra que tienen. Los que resisten volumen están marcados con su z o su r.</p></div></div>
 </section>
 
 <footer class="foot">
   <div class="eb">Autoscouting Munro 2026</div>
-  <p>16 planillas oficiales CABB · 1.073 tiros de cancha · 321 libres · 15 jugadores con minutos. Calibrado contra las 90 planillas de FLEX Superior y los 12 equipos con 5 partidos o más.</p>
+  <p>17 planillas oficiales CABB · 1.147 tiros de cancha · 344 libres · 15 jugadores con minutos. Calibrado contra las 132 planillas de FLEX Superior y los 14 equipos con 5 partidos o más. Promedios ponderados por fase (Fase 2 = 2).</p>
   <p>Generado desde <span class="n">basquet.duckdb</span> · Pizarra Táctica</p>
 </footer>
 
