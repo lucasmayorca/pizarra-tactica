@@ -1,0 +1,336 @@
+<title>Las dos últimas derrotas</title>
+<meta name="theme-color" content="#14322B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--board:#14322B;--deep:#0F2620;--chalk:#EDF2EE;--dim:#8FA99F;--rule:rgba(237,242,238,.17);--tiza:#E8C86A;--azul:#5FA8E0;--grid:rgba(237,242,238,.03);--pad:18px;--nav:60px;--hdr:44px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--board)}
+body{background-color:var(--board);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:17px 17px;background-attachment:fixed;color:var(--chalk);font:400 14.5px/1.52 'IBM Plex Sans',sans-serif;font-variant-numeric:tabular-nums;-webkit-text-size-adjust:100%}
+a{color:var(--tiza);text-decoration:none}a:hover{color:var(--chalk)}
+b,strong{font-weight:600;color:var(--chalk)}
+.hi{color:var(--tiza)}.md,.dim{color:var(--dim)}.lo{color:var(--azul)}
+/* type roles */
+.hero{font:800 54px/.88 Archivo,sans-serif;color:var(--tiza);white-space:nowrap;letter-spacing:-.01em}
+.hero.s{font-size:40px}
+.h1{font:800 27px/.98 Archivo,sans-serif;text-transform:uppercase;text-wrap:balance}
+.h1.long{font-size:20px;line-height:1.02}
+.h2{font:800 17px/1.1 Archivo,sans-serif;text-transform:uppercase;padding-bottom:10px;border-bottom:1.5px solid var(--rule)}
+.sub{font:700 11.5px/1.3 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.07em;color:var(--tiza)}
+.eb{font:600 8.5px/1.3 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--dim)}
+.pn{font:800 17px/1.1 Archivo,sans-serif}
+.p2{font-size:13px;line-height:1.45;color:var(--dim)}
+.n{font:500 13px/1.3 'IBM Plex Mono',monospace;white-space:nowrap}
+.ev{font:400 10.5px/1.4 'IBM Plex Mono',monospace;color:var(--dim)}
+p{text-wrap:pretty}
+p+p{margin-top:12px}
+/* layout */
+.blk{margin-top:44px}
+.blk>.h2+*{margin-top:4px}
+.it{border-top:1px solid var(--rule);padding:14px 0}
+.h2+.it,.h2+div>:first-child,.h2+.c4,.h2+.c5,.h2+.c8{border-top:0}
+.gap8{margin-top:8px}.gap12{margin-top:12px}.gap16{margin-top:16px}.gap24{margin-top:24px}
+/* nota / advertencia */
+.note{background:var(--deep);padding:14px 16px;font-size:13px;line-height:1.5;color:var(--dim)}
+.warn{background:var(--deep);padding:14px 16px;font-size:13px;line-height:1.5;color:var(--tiza);display:grid;grid-template-columns:18px minmax(0,1fr)}
+/* C2 cabecera */
+.hdr{position:sticky;top:0;z-index:5;height:var(--hdr);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 var(--pad);background:var(--board);border-bottom:1px solid var(--rule)}
+.hdr .l{font:800 12px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.04em}
+/* C1 navegación */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--deep);border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom)}
+.nav .w{max-width:480px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);height:var(--nav)}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:var(--dim);font:600 10px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.06em;position:relative;-webkit-tap-highlight-color:transparent;cursor:pointer}
+.tab::before{content:"";position:absolute;top:-1px;left:22%;right:22%;height:2px;background:transparent}
+.tab.on{color:var(--tiza)}.tab.on::before{background:var(--tiza)}
+.tab:active,.tab.press{color:var(--chalk);background:var(--board)}
+.tab:hover{color:var(--chalk)}.tab.on:hover{color:var(--tiza)}
+.sh{width:12px;height:12px;border:1.5px solid currentColor}
+.sh.c{border-radius:50%}.sh.d{transform:rotate(45deg) scale(.86)}
+.sh.t{width:0;height:0;border:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid currentColor;opacity:.5}
+.tab.on .sh{background:currentColor}.tab.on .sh.t{opacity:1;background:none}
+/* C3 cifra héroe */
+.c3 .eb{margin-top:10px}
+.c3 p{margin-top:10px}
+/* C4 tarjeta de eje */
+.c4{border-top:1px solid var(--rule);padding:14px 0}
+.c4 .top{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:start}
+.c4 .nm{font:600 14.5px/1.25 Archivo,sans-serif}
+.c4 .df{font-size:13px;line-height:1.35;color:var(--dim);margin-top:2px}
+.c4 .v{font:800 20px/1 Archivo,sans-serif;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.c4 .v .mk{font-size:11px;width:1.1em;text-align:center}
+.c4 .lec{margin-top:8px}
+.c4.chica .v{color:var(--dim)!important}
+/* C5 lista */
+.c5{display:grid;grid-template-columns:22px minmax(0,1fr);border-top:1px solid var(--rule);padding:14px 0}
+.c5 .mk{font-size:12px;line-height:22px}
+.c5 .ev{margin-top:6px}
+/* C6 ficha */
+.c6{border-top:1px solid var(--rule);padding:22px 0 26px}
+.c6 .id{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:baseline}
+.c6 .ix{font:800 17px/1 Archivo,sans-serif;color:var(--dim)}
+.c6 .sub{margin-top:5px}
+.c6 .st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:8px;margin-top:16px;align-items:end}
+.c6 .st>div{display:flex;flex-direction:column;gap:5px}
+.c6 .st .n{font-size:15px}
+.c6 .st .ft{font:800 27px/.95 Archivo,sans-serif;color:var(--tiza)}
+.c6 .desc{margin-top:14px}
+.c6 .qe{margin-top:14px;border-left:2px solid var(--tiza);padding:2px 0 2px 12px}
+.c6 .qe .eb{margin-bottom:4px}
+.c6.aten .pn{color:var(--dim)}
+.c6.aten .sub{color:var(--dim)}
+.c6.aten .st .ft{color:var(--dim);font-size:20px}
+.c6.aten .desc,.c6.aten .qe p{color:var(--dim)}
+.c6.aten .desc b,.c6.aten .qe b{color:var(--dim)}
+.c6.aten .qe{border-left-color:var(--rule)}
+/* C7 plan */
+.c7{border-left:2px solid var(--tiza);padding:2px 0 2px 14px;margin-top:22px}
+.c7.def{border-left-color:var(--azul)}
+.c7 .tg{font:700 11.5px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.07em;color:var(--tiza);display:flex;gap:8px;align-items:baseline}
+.c7.def .tg{color:var(--azul)}
+.c7 .tg .k{font:500 11.5px/1 'IBM Plex Mono',monospace}
+.c7 .tt{font:800 17px/1.15 Archivo,sans-serif;margin-top:8px;text-wrap:balance}
+.c7.def .tt{text-transform:uppercase;font-size:15px;letter-spacing:.02em}
+.c7 p{margin-top:8px}
+.c7 .ev{margin-top:8px}
+/* C8 clave */
+.c8{display:grid;grid-template-columns:52px minmax(0,1fr);border-top:1px solid var(--rule);padding:16px 0}
+.c8 .nb{font:800 54px/.82 Archivo,sans-serif;color:var(--rule)}
+.c8 .tt{font:800 17px/1.1 Archivo,sans-serif;text-transform:uppercase;text-wrap:balance}
+.c8 p{margin-top:6px}
+.c8 .ev{margin-top:8px}
+/* C9 tabla */
+.c9{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 calc(var(--pad)*-1);padding:0 var(--pad)}
+.c9 table{border-collapse:collapse;width:100%;min-width:max-content}
+.c9 th{font:600 8.5px/1.3 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--dim);text-align:right;padding:10px 0 8px 12px;white-space:nowrap}
+.c9 th:first-child,.c9 td:first-child{text-align:left;padding-left:0}
+.c9 td{border-top:1px solid var(--rule);padding:11px 0 11px 12px;text-align:right;font:500 13px/1.3 'IBM Plex Mono',monospace;white-space:nowrap}
+.c9 td:first-child{font:600 13px/1.3 Archivo,sans-serif}
+.c9 td.w{white-space:normal;text-align:left;font:400 13px/1.4 'IBM Plex Sans',sans-serif}
+.c9 tr.fade td{color:var(--dim)}
+.c9 .bd{font-weight:600}
+/* prosa */
+.prose p{margin-top:0}
+.prose p+p{margin-top:18px}
+.prose p .n{font-size:13.5px;color:var(--chalk)}
+.prose .lead{font-weight:500;color:var(--chalk)}
+.prose .coda{color:var(--dim);border-top:1px solid var(--rule);padding-top:16px}
+/* ritmo */
+.duo{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:12px;align-items:end;padding:18px 0 4px}
+.duo .hero{font-size:40px}
+.duo .vs{font:600 8.5px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--dim);padding-bottom:28px}
+.duo .eb{margin-top:8px}
+
+
+.app{max-width:480px;margin:0 auto;min-height:100vh}
+.view{display:none;padding:14px var(--pad) calc(var(--nav) + 56px + env(safe-area-inset-bottom))}
+.view.on{display:block}
+:root{--rule2:rgba(237,242,238,.28);--rule3:rgba(237,242,238,.45)}
+button{font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;line-height:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+.eb{font-size:9.5px}
+.h2{display:flex;width:100%;align-items:baseline;gap:9px;justify-content:space-between;cursor:pointer}
+.h2 .pm{font:400 19px/1 'IBM Plex Mono',monospace;color:var(--dim);flex:none}
+.sum{font:400 12.5px/1.5 Archivo,sans-serif;color:var(--dim);margin-top:9px;cursor:pointer}
+.blk[data-sec]{scroll-margin-top:92px}
+.tab:focus-visible,.h2:focus-visible{outline:2px solid var(--tiza);outline-offset:3px}
+.ausl{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:10px;align-items:baseline;border-top:1px solid var(--rule);padding:13px 0}
+.ausl .s{font:500 12px/1.3 'IBM Plex Mono',monospace;color:var(--dim)}
+.duelo{border-top:1px solid var(--rule);padding:16px 0 4px}
+.duelo .sc{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.duelo .sc .hero{font-size:38px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+</style>
+<div class="app">
+<header class="hdr"><span class="l">Las dos últimas derrotas</span><span class="eb">FLEX Superior · CABB</span></header>
+<section class="view" id="resumen">
+<div class="eb" style="margin-top:20px">análisis de dos derrotas · 19 fechas en la base</div>
+<h1 class="h1 gap12">Las dos últimas</h1>
+<div class="eb gap8">Versailles 58 – 47 · Munro 57 – 60 Yupanqui</div>
+<div class="note gap24">Los dos últimos partidos jugados son las dos últimas derrotas. Cortan un 4–0
+en Fase 2 y dejan el récord en <b>11–8</b>. La hipótesis de entrada era «tiramos mal y faltaron
+muchos jugadores»: la primera mitad se sostiene en uno de los dos partidos y la segunda en el otro.
+Lo que sí es común a los dos está más abajo.</div>
+
+<div class="c8"><div class="nb">1</div><div><div class="tt">No fueron el mismo partido</div><p class="p2">Contra Versailles el ataque fue <b>el peor de las 19 fechas</b>: 65.5 puntos cada 100 posesiones. Contra Yupanqui fue el 10º de 19 —81.2, por encima de la media FLEX— y perdimos igual. La de local contra un 7–10 es la más cara de las dos.</p><div class="ev">ortg 65.5 (puesto 1 de 19) · 81.2 (puesto 10) · FLEX 80.6</div></div></div>
+
+<div class="c8"><div class="nb">2</div><div><div class="tt">Falló el de afuera, no el de adentro</div><p class="p2">28/67 de dos entre los dos partidos: <b>41.8%</b>, mejor que nuestro 39.7% del año. De tres, 10/56: <b>17.9%</b> contra 28.0% de temporada y 24.8% de la liga. Y el 45.5% de los tiros salieron de afuera, la dieta más alta de la temporada.</p><div class="ev">2P 28/67 · 3P 10/56 · dieta de tres 45.5%</div></div></div>
+
+<div class="c8"><div class="nb">3</div><div><div class="tt">El doble rindió 0.84 por intento y el triple 0.54</div><p class="p2">Nunca estuvieron tan lejos. En Fase 1 el triple rendía más que el doble —0.93 contra 0.82— y tirar de afuera era lo correcto. Estas dos noches se dio vuelta de punta a punta y <b>la dieta no se movió</b>.</p><div class="ev">por intento · la liga paga 0.84 el doble y 0.74 el triple</div></div></div>
+
+<div class="c8"><div class="nb">4</div><div><div class="tt">Los dos rivales tuvieron su cuarta mejor noche del año</div><p class="p2">Versailles 4º de sus 14 partidos, Yupanqui 4º de sus 17. Y los dos fueron a la línea casi más que contra nadie: <b>60 tiros libres contra nuestros 34</b>. Son −12 puntos sobre 14 de margen total.</p><div class="ev">ellos 30/60 de la línea · nosotros 18/34</div></div></div>
+
+<div class="c8"><div class="nb">5</div><div><div class="tt">Las ausencias explican una y no la otra</div><p class="p2">Contra Versailles jugaron <b>8</b>, la rotación más corta de las 19 fechas. Contra Yupanqui, 10, que es exactamente lo normal: hay siete partidos con 10 y en ésos estamos 4–3. Y los dos rivales también vinieron cortos.</p><div class="ev">8 jugadores · 10 jugadores · media de la temporada 10.4</div></div></div>
+</section>
+<section class="view" id="partidos">
+<div class="eb" style="margin-top:20px">los dos partidos</div>
+<h1 class="h1 gap12">Uno fue una mala noche. El otro, una mala derrota</h1>
+<p class="p2 gap12">Leídos juntos parecen lo mismo. Leídos contra la temporada del rival, no se
+parecen en nada.</p>
+<div class="blk" data-sec id="s-ver"><button class="h2" data-toggle="ver" aria-expanded="true" aria-controls="b-ver"><span>Versailles 58 – 47 Munro</span><span class="pm">−</span></button><div class="sum" hidden>El peor ataque del año… contra la mejor defensa de la liga.</div><div id="b-ver">
+<div class="duelo"><div class="sc"><span class="hero">47 – 58</span><span class="eb">de visitante</span></div></div>
+<p class="gap16">Fue <b>el peor ataque de nuestras 19 fechas</b>: 47 puntos, 65.5 cada 100 posesiones,
+4/27 de afuera. Los tres y los puntos son el puesto 1 de 19 contando de peor a mejor.</p>
+<p>Pero la vara importa. Versailles tiene <b>la mejor defensa de la liga</b>: concede 69.9 puntos
+cada 100 posesiones, 1º de los 15 equipos legibles. Sus catorce rivales le promedian 68.9 de ataque
+y 36.0% de efectividad, contra 80.6 y 40.1% de la liga. Nuestro 65.5 fue el 6º peor de esos catorce:
+en el montón de lo que Versailles le hace a todo el mundo.</p>
+<p>Lo que no está en el montón es el rebote. <b>Les dimos su mejor noche de rebote de ataque del año</b>
+—10 rebotes, 31.3% de los disponibles, puesto 1 de sus 14 partidos— y su tercera mayor cantidad de
+tiros libres. Su ataque contra nosotros fue el 4º mejor de su temporada.</p>
+<div class="c9"><table><thead><tr><th>Versailles contra nosotros</th><th>valor</th><th>su puesto</th></tr></thead><tbody><tr><td>Rebote de ataque</td><td>31.3%</td><td>1 de 14</td></tr><tr><td>Tiros libres intentados</td><td>25</td><td>3 de 14</td></tr><tr><td>Ataque (cada 100 pos.)</td><td>85.3</td><td>4 de 14</td></tr><tr class="fade"><td>Efectividad de tiro</td><td>44.9%</td><td>4 de 14</td></tr></tbody></table></div><div class="eb" style="margin-top:10px">puesto 1 = su mejor registro de la temporada</div>
+<p class="gap16">Y lo hicieron <b>sin Rojas</b> —su segundo por valoración, 26.6′ y 10.9 puntos en diez
+partidos— y sin Puglisi, que promedia 10.6.</p>
+</div></div>
+<div class="blk" data-sec id="s-yup"><button class="h2" data-toggle="yup" aria-expanded="false" aria-controls="b-yup"><span>Munro 57 – 60 Yupanqui</span><span class="pm">+</span></button><div class="sum">Ataque de mediana, derrota en la línea contra un 7–10.</div><div id="b-yup" hidden>
+<div class="duelo"><div class="sc"><span class="hero">57 – 60</span><span class="eb">de local</span></div></div>
+<p class="gap16">Acá el ataque <b>no falló</b>. 81.2 puntos cada 100 posesiones es el puesto 10 de 19
+—justo la mediana— y está por encima de la media FLEX, que es 80.6. Metimos 44.1% de dos, nuestro
+13º registro de 19. Y agarramos 16 rebotes de ataque, el 35.6%: el tercer mejor del año.</p>
+<p>Enfrente había un equipo <b>7–10, 13º de 15</b>, con −5.9 de neto. Tuvo contra nosotros su cuarta
+mejor noche de ataque de diecisiete.</p>
+<p>Dónde se fue: fueron a la línea <b>35 veces</b>, su segunda mayor cantidad del año —promedian 23.8—
+y metieron 16. Nosotros tiramos 21 y metimos 9. <b>Perdimos por 3 con −7 en la línea.</b>
+Hicimos 28 faltas, nuestra tercera marca más alta de la temporada y nueve por encima de la media de
+la liga, que es 19.2.</p>
+<p>El otro agujero fue la presión: les forzamos <b>10 pérdidas en 72 posesiones</b>, el 13.8%, nuestro
+tercer peor registro de las 19 fechas. Robamos 7.</p>
+<div class="c9"><table><thead><tr><th>Yupanqui contra nosotros</th><th>valor</th><th>su puesto</th></tr></thead><tbody><tr><td>Tiros libres intentados</td><td>35</td><td>2 de 17</td></tr><tr><td>Ataque (cada 100 pos.)</td><td>82.9</td><td>4 de 17</td></tr><tr class="fade"><td>Rebote de ataque</td><td>18.2%</td><td>13 de 17</td></tr></tbody></table></div><div class="eb" style="margin-top:10px">puesto 1 = su mejor registro de la temporada</div>
+<p class="gap16">Jugaron <b>sin Renkel</b>, su tercero por valoración: 26.2′ y 11.3 puntos en diez partidos.</p>
+</div></div>
+</section>
+<section class="view" id="tiro">
+<div class="eb" style="margin-top:20px">el tiro</div>
+<h1 class="h1 gap12">La dieta no siguió a lo que rendía</h1>
+<p class="p2 gap12">El hallazgo no es que tiramos mal. Es que seguimos tirando del mismo lado cuando
+el otro estaba rindiendo 0.30 puntos más por intento.</p>
+<div class="blk" data-sec id="s-dieta"><button class="h2" data-toggle="dieta" aria-expanded="true" aria-controls="b-dieta"><span>De dónde convenía tirar</span><span class="pm">−</span></button><div class="sum" hidden>El doble rindió 0.84 y el triple 0.54. La dieta siguió en 45.5%.</div><div id="b-dieta">
+<p class="gap12">La cuenta que decide de dónde conviene tirar es la de puntos por intento: triples
+convertidos por tres, dobles convertidos por dos. La liga paga <b>0.84 el doble y 0.74 el triple</b>,
+y aun así tira el 39.8% de afuera.</p>
+<div class="c9"><table><thead><tr><th></th><th>dieta de 3</th><th>el triple rinde</th><th>el doble rinde</th></tr></thead><tbody><tr><td>La liga FLEX</td><td>39.8%</td><td>0.74</td><td>0.84</td></tr><tr><td>Fase 1 · 13 partidos</td><td>38.0%</td><td>0.93</td><td>0.82</td></tr><tr><td>Fase 2 · los 4 ganados</td><td>45.2%</td><td>0.75</td><td>0.70</td></tr><tr><td>Los 2 perdidos</td><td>45.5%</td><td>0.54</td><td>0.84</td></tr></tbody></table></div><div class="eb" style="margin-top:10px">puntos por intento</div>
+<p class="gap16">La fila de abajo es la única donde el doble rinde más que el triple, y lo hace por
+<b>0.30 puntos por intento</b>. En Fase 1 pasaba al revés con una distancia parecida: ahí tirar de
+afuera era la decisión correcta y el 38% de dieta se justificaba solo.</p>
+<p>Lo que no cambió entre una fila y la otra es la dieta: 45.5% de los tiros de afuera, la más alta
+de la temporada, con el de dos metiendo 41.8% —nuestro mejor tramo del año— y el de tres 17.9%.</p>
+<div class="gap24"><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:38.18%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:27.27%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:72.73%;width:10px;height:10px;margin-left:-5px;background:#E8C86A"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">38.0%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">FASE 1</span></div><div style="position:absolute;top:27px;left:43.15%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">39.8%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">FLEX</span></div><div style="position:absolute;top:27px;left:72.73%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#E8C86A">45.5%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">LOS 2</span></div></div></div>
+<div class="eb">dieta de triples · % de los tiros de cancha</div>
+<div class="gap24"><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:51.03%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:72.73%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:27.27%;width:10px;height:10px;margin-left:-5px;background:#E8C86A"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#E8C86A">17.9%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">LOS 2</span></div><div style="position:absolute;top:27px;left:51.03%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">24.8%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">FLEX</span></div><div style="position:absolute;top:27px;left:72.73%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">31.1%</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">FASE 1</span></div></div></div>
+<div class="eb">efectividad de tres</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F"><span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;background:#EDF2EE"></span>los 2 perdidos</span><span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #EDF2EE;box-sizing:border-box"></span>lo nuestro</span><span style="display:flex;align-items:center;gap:6px"><span style="width:2px;height:12px;background:#8FA99F"></span>FLEX</span></div>
+</div></div>
+<div class="blk" data-sec id="s-vol"><button class="h2" data-toggle="vol" aria-expanded="false" aria-controls="b-vol"><span>Quién tiró</span><span class="pm">+</span></button><div class="sum">Zajac tiró 21 de los 56 triples del equipo, al 23.8%.</div><div id="b-vol" hidden>
+<p class="gap12">De los <b>56 triples</b> que tiramos en los dos partidos, <b>21 los tiró Zajac</b>:
+el 38% del total del equipo. Es nuestro mejor tirador de afuera de la temporada —38.5%, muy por
+encima del 24.8% de la liga— y por eso la pelota lo busca.</p>
+<div class="c9"><table><thead><tr><th>Zajac</th><th>3PI por partido</th><th>3P%</th><th>minutos</th></tr></thead><tbody><tr><td>Los otros 17 partidos</td><td>5.8</td><td>42.7%</td><td>19.2′</td></tr><tr><td>Los 2 perdidos</td><td>10.5</td><td>23.8%</td><td>25.8′</td></tr></tbody></table></div>
+<p class="gap16">El volumen casi se duplicó y la puntería se partió al medio. No es una acusación: es
+dónde terminó la magnitud. La planilla es un box score y no sabe de qué jugada salió ninguno de esos
+21 tiros, ni si estaba solo.</p>
+<p>Al lado, Mayorca tiró 1/10 de afuera entre los dos partidos, contra 32.0% el resto del año.
+Entre los dos se llevaron <b>31 de los 56</b>.</p>
+</div></div>
+<div class="blk" data-sec id="s-f2"><button class="h2" data-toggle="f2" aria-expanded="false" aria-controls="b-f2"><span>Fase 2, partido por partido</span><span class="pm">+</span></button><div class="sum">Viene de antes: 31.1% de tres en Fase 1, 22.9% en Fase 2.</div><div id="b-f2" hidden>
+<p class="gap12">Fase 2 son seis partidos y el patrón no arranca con las dos derrotas: en Fase 1
+metíamos <b>31.1%</b> de afuera con 38.0% de dieta, y en Fase 2 vamos <b>22.9%</b> con 45.3%.
+Más volumen y menos puntería, contra defensas mejores —a Fase 2 pasaron los ocho que ganaron su zona—.</p>
+<div style="display:flex;flex-direction:column;margin-top:10px"><div style="border-top:1px solid rgba(237,242,238,.17);padding:9px 0"><div style="position:relative;height:13px"><div style="position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:rgba(237,242,238,.45)"></div><div style="position:absolute;top:2px;height:9px;left:50.00%;width:6.40%;background:#8FA99F"></div><span style="position:absolute;top:0;left:57.90%;right:0;text-align:left;font:600 11px/13px Archivo,sans-serif;color:#EDF2EE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Boca del Tigre</span></div><div style="font:400 10.5px/1.4 'IBM Plex Mono',monospace;color:#8FA99F;margin-top:4px">visitante · 84 – 76 · 3P 10/38 · 26.3%</div></div><div style="border-top:1px solid rgba(237,242,238,.17);padding:9px 0"><div style="position:relative;height:13px"><div style="position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:rgba(237,242,238,.45)"></div><div style="position:absolute;top:2px;height:9px;left:50.00%;width:1.60%;background:#EDF2EE"></div><span style="position:absolute;top:0;left:53.10%;right:0;text-align:left;font:600 11px/13px Archivo,sans-serif;color:#EDF2EE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Italiano</span></div><div style="font:400 10.5px/1.4 'IBM Plex Mono',monospace;color:#8FA99F;margin-top:4px">local · 70 – 68 · 3P 6/25 · 24.0%</div></div><div style="border-top:1px solid rgba(237,242,238,.17);padding:9px 0"><div style="position:relative;height:13px"><div style="position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:rgba(237,242,238,.45)"></div><div style="position:absolute;top:2px;height:9px;left:50.00%;width:1.60%;background:#EDF2EE"></div><span style="position:absolute;top:0;left:53.10%;right:0;text-align:left;font:600 11px/13px Archivo,sans-serif;color:#EDF2EE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Caza y Pesca Azul A</span></div><div style="font:400 10.5px/1.4 'IBM Plex Mono',monospace;color:#8FA99F;margin-top:4px">visitante · 63 – 61 · 3P 11/39 · 28.2%</div></div><div style="border-top:1px solid rgba(237,242,238,.17);padding:9px 0"><div style="position:relative;height:13px"><div style="position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:rgba(237,242,238,.45)"></div><div style="position:absolute;top:2px;height:9px;left:50.00%;width:2.40%;background:#EDF2EE"></div><span style="position:absolute;top:0;left:53.90%;right:0;text-align:left;font:600 11px/13px Archivo,sans-serif;color:#EDF2EE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">San Fernando Blanco</span></div><div style="font:400 10.5px/1.4 'IBM Plex Mono',monospace;color:#8FA99F;margin-top:4px">local · 61 – 58 · 3P 7/34 · 20.6%</div></div><div style="border-top:1px solid rgba(237,242,238,.17);padding:9px 0"><div style="position:relative;height:13px"><div style="position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:rgba(237,242,238,.45)"></div><div style="position:absolute;top:2px;height:9px;left:41.20%;width:8.80%;background:transparent;border:1.5px solid #5FA8E0;box-sizing:border-box"></div><span style="position:absolute;top:0;right:60.30%;left:0;text-align:right;font:600 11px/13px Archivo,sans-serif;color:#EDF2EE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Ateneo Popular Versailles</span></div><div style="font:400 10.5px/1.4 'IBM Plex Mono',monospace;color:#8FA99F;margin-top:4px">visitante · 47 – 58 · 3P 4/27 · 14.8%</div></div><div style="border-top:1px solid rgba(237,242,238,.17);padding:9px 0"><div style="position:relative;height:13px"><div style="position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:rgba(237,242,238,.45)"></div><div style="position:absolute;top:2px;height:9px;left:47.60%;width:2.40%;background:transparent;border:1.5px solid #5FA8E0;box-sizing:border-box"></div><span style="position:absolute;top:0;right:53.90%;left:0;text-align:right;font:600 11px/13px Archivo,sans-serif;color:#EDF2EE;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Yupanqui</span></div><div style="font:400 10.5px/1.4 'IBM Plex Mono',monospace;color:#8FA99F;margin-top:4px">local · 57 – 60 · 3P 6/29 · 20.7%</div></div><div style="font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F;text-align:center;margin-top:8px">diferencia · escala ±20</div></div>
+<div class="eb" style="margin-top:4px">barra hueca = derrota · las dos de abajo son los partidos de este reporte</div>
+<p class="gap16">Los cuatro ganados se ganaron por 8, 2, 2 y 3. Con el de afuera así, el margen no da
+para una mala noche: las dos que salieron mal salieron por 11 y por 3.</p>
+</div></div>
+</section>
+<section class="view" id="banco">
+<div class="eb" style="margin-top:20px">la línea y el banco</div>
+<h1 class="h1 gap12">Lo que sí tienen los dos en común</h1>
+<p class="p2 gap12">Una cosa se repite en los dos partidos, y no es el tiro.</p>
+<div class="blk" data-sec id="s-linea"><button class="h2" data-toggle="linea" aria-expanded="true" aria-controls="b-linea"><span>La línea</span><span class="pm">−</span></button><div class="sum" hidden>60 tiros libres de ellos contra 34 nuestros. −12 puntos.</div><div id="b-linea">
+<p class="gap12">Es lo único que los dos partidos tienen igual. Los rivales tiraron <b>60 tiros libres
+contra nuestros 34</b> y metieron 30 contra 18: <b>−12 puntos</b> sobre 14 de margen total.</p>
+<div class="c9"><table><thead><tr><th></th><th>faltas nuestras</th><th>sus libres</th><th>nuestros libres</th><th>margen</th></tr></thead><tbody><tr><td>Versailles</td><td>20</td><td>14/25</td><td>9/13</td><td>−11</td></tr><tr><td>Yupanqui</td><td>28</td><td>16/35</td><td>9/21</td><td>−3</td></tr><tr class="fade"><td>Las otras 17 fechas</td><td>20.7</td><td>—/23.1</td><td>—/20.2</td><td></td></tr></tbody></table></div>
+<p class="gap16">Las 25 de Versailles son su tercera mayor cantidad del año y las 35 de Yupanqui, la
+segunda. No es que estos dos equipos vivan en la línea: <b>les abrimos la puerta nosotros</b>.</p>
+<div class="gap24"><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:27.27%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:38.64%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:72.73%;width:10px;height:10px;margin-left:-5px;background:#E8C86A"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">20.8</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">FLEX</span></div><div style="position:absolute;top:27px;left:43.97%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">23.1</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">EL RESTO</span></div><div style="position:absolute;top:27px;left:72.73%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#E8C86A">30.0</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">LOS 2</span></div></div></div>
+<div class="eb">tiros libres que concedemos por partido</div>
+<div class="gap24"><div style="position:relative;height:54px"><div style="position:absolute;left:0;right:0;top:13px;height:1px;background:rgba(237,242,238,.28)"></div><div style="position:absolute;top:6px;left:27.27%;width:2px;height:15px;margin-left:-1px;background:#8FA99F"></div><div style="position:absolute;top:8px;left:41.48%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;border:2px solid #EDF2EE;background:#14322B;box-sizing:border-box"></div><div style="position:absolute;top:8.5px;left:72.73%;width:10px;height:10px;margin-left:-5px;background:#E8C86A"></div><div style="position:absolute;top:27px;left:27.27%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#8FA99F">19.2</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">FLEX</span></div><div style="position:absolute;top:27px;left:43.97%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#EDF2EE">20.7</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">EL RESTO</span></div><div style="position:absolute;top:27px;left:72.73%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;white-space:nowrap"><span style="font:500 12px/1 'IBM Plex Mono',monospace;color:#E8C86A">24.0</span><span style="font:600 9px/1 Archivo,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#8FA99F">LOS 2</span></div></div></div>
+<div class="eb">faltas nuestras por partido</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font:600 9.5px/1.3 Archivo,sans-serif;letter-spacing:.01em;color:#8FA99F"><span style="display:flex;align-items:center;gap:6px"><span style="width:9px;height:9px;background:#EDF2EE"></span>los 2 perdidos</span><span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #EDF2EE;box-sizing:border-box"></span>lo nuestro</span><span style="display:flex;align-items:center;gap:6px"><span style="width:2px;height:12px;background:#8FA99F"></span>FLEX</span></div>
+<div class="warn gap24"><span>⚠</span><span>La planilla cuenta faltas y libres, no dice qué falta fue.
+Si fueron faltas de rotación tarde, de manos o de rebote, eso no está en el box score.</span></div>
+</div></div>
+<div class="blk" data-sec id="s-banco"><button class="h2" data-toggle="banco" aria-expanded="false" aria-controls="b-banco"><span>Quién no estuvo</span><span class="pm">+</span></button><div class="sum">8 jugadores en uno, 10 en el otro. Los rivales también vinieron cortos.</div><div id="b-banco" hidden>
+<p class="gap12">Contra Versailles jugaron <b>8</b>, y es la única fecha de las 19 con ocho. Contra
+Yupanqui jugaron 10, que es la moda de la temporada: hay siete partidos con 10 y ahí estamos 4–3.</p>
+<div class="c9"><table><thead><tr><th>Jugadores con minutos</th><th>partidos</th><th>récord</th></tr></thead><tbody><tr><td>8</td><td>1</td><td>0–1</td></tr><tr><td>9</td><td>2</td><td>1–1</td></tr><tr><td>10</td><td>7</td><td>4–3</td></tr><tr><td>11</td><td>7</td><td>4–3</td></tr><tr><td>12</td><td>2</td><td>2–0</td></tr></tbody></table></div><div class="eb" style="margin-top:10px">la profundidad sola no separa ganar de perder</div>
+<div class="h2" style="border:0;padding:0;margin-top:26px;cursor:default"><span class="sub">No figuran en la planilla</span></div>
+<div class="ausl"><span class="s">VER</span><span>Galinetti, Pérez Williams, Mendizábal, Arambarri, Fernández y Cordero. <b>Masi vistió y no entró.</b></span></div>
+<div class="ausl"><span class="s">YUP</span><span>Di Cosmo, Fernández y Cordero. <b>Mendizábal y Masi vistieron y no entraron.</b></span></div>
+<p class="gap16">La baja más pesada es <b>Galinetti</b>: 0′ y 1.9′ en los dos partidos, y es el de mayor
+valoración del plantel —12.6 por partido en catorce fechas—. Di Cosmo, que es el máximo anotador
+(11.9), jugó contra Versailles y faltó contra Yupanqui.</p>
+<p>Ahora el contrapunto, que es lo que vuelve floja la explicación: <b>los dos rivales también vinieron
+cortos</b>. Versailles jugó sin Rojas y sin Puglisi —sus dos del medio de la tabla por minutos y
+puntos— y nos ganó por 11. Yupanqui jugó sin Renkel, su tercero por valoración.</p>
+<p>Y el test que el proyecto ya tiene para esto —<span class="n">analisis.ausencias()</span>, que busca
+al que juega mucho cuando se gana y nada cuando se pierde— <b>no devuelve ninguna baja</b> para Munro.
+Un patrón de ausencia se afirma con los dos lados, y acá no están los dos.</p>
+</div></div>
+<div class="blk" data-sec id="s-nota"><button class="h2" data-toggle="nota" aria-expanded="false" aria-controls="b-nota"><span>Lo que la planilla no dice</span><span class="pm">+</span></button><div class="sum">Tres cosas que no se pueden afirmar — y un error de carga, ya corregido.</div><div id="b-nota" hidden>
+<p class="gap12">Tres cosas que no se pueden afirmar con una planilla, y que por eso no están arriba:</p>
+<div class="c5"><span class="mk">·</span><div>De qué jugada salió cada tiro. No hay jugada a jugada,
+así que «viven del pick and roll» o «se nos cayó la zona» serían inventados.</div></div>
+<div class="c5"><span class="mk">·</span><div>Qué pasó en cada cuarto. No hay parciales: no se puede
+decir si el partido se fue en los últimos cinco minutos.</div></div>
+<div class="c5"><span class="mk">·</span><div><b>Por qué</b> faltó cada jugador. Lesión, sanción, viaje
+o decisión técnica se ven exactamente igual desde el box score.</div></div>
+
+<div class="warn gap24"><span>⚠</span><span><b>Había un error en la planilla de Versailles. Ya está corregido.</b>
+A Gómez le quedaron <span class="n">4:20</span> de juego con 12 puntos, 10 rebotes y 10 tiros libres.
+Se perdió el dígito de la decena: eran <span class="n">34:20</span>, y por eso al bloque de Versailles
+le faltaban exactamente 30 minutos (170 en vez de 200).</span></div>
+<p class="gap16"><span class="n">parser.py</span> sacaba la duración del <b>primer</b> bloque de la
+planilla, así que el partido quedaba cargado como de 34 minutos y el resumen informaba un ritmo de
+<b>82.2 posesiones</b> cuando el real es <b>69.9</b>. Los ratings de ataque y defensa nunca se vieron
+afectados, porque son por posesión.</p>
+<p>Ahora toma el <b>máximo de los dos bloques</b>: el bloque corto miente, el largo no —nadie suma
+minutos de más—. Verificado sobre las 214 planillas: solo cambia este partido y uno de Murray
+(39.6′ → 40′), y ninguno cruza el umbral de suplementario. Como la duración entra en el hash del
+<span class="n">partido_id</span>, la base se reconstruyó entera: <b>mismos 147 partidos, 294 filas de
+equipo y 3.265 actuaciones</b>, y ni un número de este reporte se movió.</p>
+<div class="note gap24">Todo lo de este reporte sale de las 19 planillas de Munro y de las 147 de la
+base. Los promedios de temporada que se usan como vara <b>excluyen</b> los dos partidos analizados,
+para que un partido raro no corra su propia vara hacia sí mismo. Los puestos son sobre las 19 fechas
+salvo donde dice otra cosa.</div>
+</div></div>
+</section>
+</div>
+
+<nav class="nav" aria-label="Secciones"><div class="w">
+<a class="tab" href="#resumen" data-v="resumen"><span class="sh"></span>Resumen</a>
+<a class="tab" href="#partidos" data-v="partidos"><span class="sh c"></span>Los partidos</a>
+<a class="tab" href="#tiro" data-v="tiro"><span class="sh t"></span>El tiro</a>
+<a class="tab" href="#banco" data-v="banco"><span class="sh d"></span>Línea y banco</a>
+</div></nav>
+<script>
+(function(){
+var V=['resumen','partidos','tiro','banco'];
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+function vista(){var h=location.hash.slice(1);return V.indexOf(h)>=0?h:'resumen'}
+function go(){var v=vista();
+ $$('.view').forEach(function(s){s.classList.toggle('on',s.id===v)});
+ $$('.tab').forEach(function(t){var on=t.dataset.v===v;t.classList.toggle('on',on);
+  on?t.setAttribute('aria-current','page'):t.removeAttribute('aria-current')});
+ window.scrollTo(0,0)}
+function toggle(k){var b=document.getElementById('b-'+k);if(!b)return;
+ var bt=$('[data-toggle="'+k+'"]');var on=b.hidden;b.hidden=!on;
+ if(bt){bt.setAttribute('aria-expanded',on?'true':'false');
+  var pm=bt.querySelector('.pm');if(pm)pm.textContent=on?'−':'+'}
+ var sm=$('#s-'+k+' > .sum');if(sm)sm.hidden=on}
+document.addEventListener('click',function(e){
+ var cab=e.target.closest('.h2[data-toggle],.sum');
+ if(cab){var k=cab.dataset.toggle||cab.parentNode.id.slice(2);if(k){e.preventDefault();toggle(k)}return}});
+window.addEventListener('hashchange',go);go();
+})();
+</script>
